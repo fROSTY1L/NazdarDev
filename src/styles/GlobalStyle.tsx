@@ -26,4 +26,11 @@ body{
 .github:hover {
       background-color: ${colors.buttons.github};
   }
+
+.non-selectable {
+    user-select: none; 
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+}
 `

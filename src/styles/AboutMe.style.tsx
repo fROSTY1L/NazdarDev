@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { colors } from "../variables/Colors";
 
 const Wrap = styled.div`
@@ -107,8 +107,6 @@ const ButtonWrap = styled.div`
   align-items: center;
   transition: background-color 0.3s ease; 
 
-  
-
 `
 
 const MainButton = styled.div`
@@ -128,6 +126,58 @@ const MainButton = styled.div`
   
 `
 
-export {Wrap, Title, TitleText, TitleImg, Content, MainImg, MainImgWrap, AboutMeInfo, AboutMeInfoTitle, AboutMeInfoText, InfoPart, ButtonsPart, MainButton, AdditionalButtons, Button, ButtonWrap}
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
+
+const fadeOut = keyframes`
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+`;
+
+
+const ModalBackground = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); // Полупрозрачный фон
+    backdrop-filter: blur(5px); // Размытие фона
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; // Убедитесь, что модал выше других элементов
+`;
+
+
+const ModalContainer = styled.div<{ isOpen: boolean }>`
+    width: 400px;
+    height: 400px;
+    background: white; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: ${(props) => (props.isOpen ? fadeIn : fadeOut)} 0.3s forwards; // Анимация
+`;
+
+export { ModalBackground, ModalContainer, Wrap, Title, TitleText, TitleImg, Content, MainImg, MainImgWrap, AboutMeInfo, AboutMeInfoTitle, AboutMeInfoText, InfoPart, ButtonsPart, MainButton, AdditionalButtons, Button, ButtonWrap}
 
 
