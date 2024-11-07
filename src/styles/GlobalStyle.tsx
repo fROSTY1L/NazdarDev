@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { colors } from "../variables/Colors";
+import { Colors, useColors } from "../variables/Colors";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{colors: Colors}>`
 *{
     margin: 0;
     padding: 0;
@@ -11,20 +11,20 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    background: ${colors.bg};
+    background: ${({ colors }) => colors.bg};
 }
 
 .vk:hover {
-      background-color: ${colors.buttons.vk};
+      background-color: ${({ colors }) => colors.buttons.vk};
   }
 .telegram:hover {
-      background-color: ${colors.buttons.telegram};
+      background-color: ${({ colors }) => colors.buttons.telegram};
   }
 .discord:hover {
-      background-color: ${colors.buttons.discord};
+      background-color: ${({ colors }) => colors.buttons.discord};
   }
 .github:hover {
-      background-color: ${colors.buttons.github};
+      background-color: ${({ colors }) => colors.buttons.github};
   }
 
 .non-selectable {

@@ -1,4 +1,5 @@
 import { AboutMeInfo, AboutMeInfoText, AboutMeInfoTitle } from "../../styles/AboutMe.style"
+import { useColors } from "../../variables/Colors"
 
 interface InfoStringProps {
     title: string,
@@ -6,9 +7,11 @@ interface InfoStringProps {
 }
 
 const InfoString = (props: InfoStringProps) => {
+  const colors = useColors()
+  
   return (
     <AboutMeInfo>
-        <AboutMeInfoTitle>
+        <AboutMeInfoTitle colors={colors}>
           {props.title}
         </AboutMeInfoTitle>
         <AboutMeInfoText>

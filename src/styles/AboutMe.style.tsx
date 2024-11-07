@@ -1,11 +1,12 @@
 import styled, { keyframes } from "styled-components";
-import { colors } from "../variables/Colors";
+import { Colors } from "../variables/Colors";
 
-const Wrap = styled.div`
+
+const Wrap = styled.div<{colors: Colors}>`
   top: .3rem;
   position: sticky;
   border-radius: .5rem;
-  background: ${colors.menu};
+  background: ${({ colors }) => colors.menu};
   height: calc(100vh - .6rem);
   width: 18rem;
   margin: .3rem;
@@ -73,8 +74,8 @@ const TitleImg = styled.img`
 const AboutMeInfo = styled.div`
  width: 100%;
 `
-const AboutMeInfoTitle = styled.p`
-  color: ${colors.textGray};
+const AboutMeInfoTitle = styled.p<{ colors: Colors }>`
+  color: ${({ colors }) => colors.textGray};
   font-size: .7rem
 `
 const AboutMeInfoText = styled.p`
@@ -95,13 +96,13 @@ const AdditionalButtons = styled.div`
 const Button = styled.img`
   width: 90%;
 `
-const ButtonWrap = styled.div`
+const ButtonWrap = styled.div<{ colors: Colors }>`
   cursor: pointer;
   width: 1.8rem;
   height: 1.8rem;
   padding: .3rem;
   border-radius: .2rem;
-  background: ${colors.bg};
+  background: ${({ colors }) => colors.bg};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,12 +156,12 @@ const ModalBackground = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); // Полупрозрачный фон
-    backdrop-filter: blur(5px); // Размытие фона
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; // Убедитесь, что модал выше других элементов
+    z-index: 1000; 
 `;
 
 

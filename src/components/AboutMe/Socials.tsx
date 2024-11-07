@@ -1,4 +1,5 @@
 import { AboutMeInfo, AboutMeInfoTitle, AdditionalButtons, Button, ButtonWrap } from "../../styles/AboutMe.style"
+import { useColors } from "../../variables/Colors"
 
 interface InfoStringProps {
     title: string,
@@ -6,17 +7,17 @@ interface InfoStringProps {
 }
 
 const Socials = (props: InfoStringProps) => {
-
+  const colors = useColors()
   return (
     <AboutMeInfo>
-        <AboutMeInfoTitle>
+        <AboutMeInfoTitle colors={colors}>
           {props.title}
         </AboutMeInfoTitle>
         <AdditionalButtons>
             {props.image.map((img: string) => {
                 const className = img.split('/').pop()?.split('.')[0]; 
                 return (
-                    <ButtonWrap key={img} className={className}>
+                    <ButtonWrap colors={colors} key={img} className={className}>
                         <Button src={img}/>  
                     </ButtonWrap>)}
                 )}

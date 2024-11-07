@@ -8,11 +8,12 @@ import github from "../assets/AboutMe/buttons/github.png"
 import InfoString from "../components/AboutMe/InfoString"
 import Socials from "../components/AboutMe/Socials"
 import LetsWorkButton from "../components/AboutMe/LetsWorkButton"
+import { useColors } from "../variables/Colors"
 
 const AboutMe = () => {
-  console.log(vk)
+  const colors = useColors()
   return (
-    <Wrap>
+    <Wrap colors={colors}>
       <Content>
         <InfoPart>
         <Title>
