@@ -4,7 +4,11 @@ import { RootState } from "../store";
 export interface Colors {
     menu: string,
     bg: string,
-    textGray: string,
+    text: {
+        main: string,
+        title: string,
+        gray: string
+    },
     buttons: {
         vk: string,
         telegram: string,
@@ -20,7 +24,11 @@ export const useColors = () => {
     {
         menu: '#2D2E31',
         bg: '#202124',
-        textGray: '#737272',
+        text: {
+            main: 'white',
+            title: '',
+            gray: '#737272'
+        },
         buttons: {
             vk: '#0072F7',
             telegram: '#28A4E4',
@@ -30,8 +38,12 @@ export const useColors = () => {
     } : 
     {
         menu: '#2D2E31',
-        bg: '#202124',
-        textGray: '#737272',
+        bg: 'white',
+        text: {
+            main: '',
+            title: '',
+            gray: '#737272'
+        },
         buttons: {
             vk: '#0072F7',
             telegram: '#28A4E4',

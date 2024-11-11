@@ -3,8 +3,6 @@ import { Colors } from "../variables/Colors";
 
 
 const Wrap = styled.div<{colors: Colors}>`
-  top: .3rem;
-  position: sticky;
   border-radius: .5rem;
   background: ${({ colors }) => colors.menu};
   height: calc(100vh - .6rem);
@@ -12,6 +10,9 @@ const Wrap = styled.div<{colors: Colors}>`
   margin: .3rem;
   padding: 1rem;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  @media (max-width: 768px) {
+      display: none;
+    }
 `
 const Content = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const InfoPart = styled.div`
   width: 100%;
   gap: 1.2rem;
 `
-const gradientAnimation = `
+export const gradientAnimation = `
 background: linear-gradient(45deg, 
         #5221E6,
         #71bdd9, 
@@ -75,7 +76,7 @@ const AboutMeInfo = styled.div`
  width: 100%;
 `
 const AboutMeInfoTitle = styled.p<{ colors: Colors }>`
-  color: ${({ colors }) => colors.textGray};
+  color: ${({ colors }) => colors.text.gray};
   font-size: .7rem
 `
 const AboutMeInfoText = styled.p`
@@ -127,7 +128,7 @@ const MainButton = styled.div`
   
 `
 
-const fadeIn = keyframes`
+export const fadeIn = keyframes`
     from {
         opacity: 0;
         transform: translateY(-20px);
@@ -138,7 +139,7 @@ const fadeIn = keyframes`
     }
 `;
 
-const fadeOut = keyframes`
+export const fadeOut = keyframes`
     from {
         opacity: 1;
         transform: translateY(0);

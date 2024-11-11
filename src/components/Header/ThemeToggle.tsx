@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux"
-import { Container, Input, Label, Span } from "../../styles/Header/ToggleTheme.style"
+import { Container, ThemeImg } from "../../styles/Header/ToggleTheme.style"
 import { setTheme } from "../../store/themeReducer"
+import themeImg from '../../assets/Header/toggle theme/night-mode.png'
 
 const ThemeToggle = () => {
   const dispatch = useDispatch()
@@ -9,11 +10,8 @@ const ThemeToggle = () => {
     dispatch(setTheme())
   }
   return (
-    <Container>
-        <Label>
-          <Input type="checkbox" onChange={toggleTheme} />
-          <Span></Span>
-        </Label>
+    <Container onClick={toggleTheme}>
+      <ThemeImg src={themeImg}/>
       </Container>
   )
 }
