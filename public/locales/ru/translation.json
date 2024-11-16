@@ -1,0 +1,33 @@
+{
+    "text": "авй",
+    "AboutMe": {
+        "titles": {
+            "name": "имя",
+            "specialty": "специальность",
+            "liveIn": "нахожусь",
+            "dateOfBirth": "дата рождения",
+            "socials": "социальные сети"
+        },
+        "content": {
+            "name": "Боллоев Наздар",
+            "specialty": "React разработчик",
+            "liveIn": "Тула, Россия",
+            "dateOfBirth": "16.11.2004"
+        },
+        "mainButton": "Совместная работа!"   
+    },
+    "Header": {
+        "buttons": {
+            "home": "Главная",
+            "skills": "Технологии",
+            "about": "Обо мне",
+            "projects": "Проекты"
+        },
+        "settings": {
+            "translate": "Переключить язык на",
+            "darkTheme": "Темная тема",
+            "lightTheme": "Светлая тема"
+        }
+    }
+
+}

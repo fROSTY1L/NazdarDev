@@ -1,0 +1,31 @@
+{
+    "AboutMe": {
+        "titles": {
+            "name": "name",
+            "specialty": "specialty",
+            "liveIn": "live in",
+            "dateOfBirth": "date of birth",
+            "socials": "socials"
+        },
+        "content": {
+            "name": "Nazdar Bolloev",
+            "specialty": "React developer",
+            "liveIn": "Tula, Russia",
+            "dateOfBirth": "16.11.2004"
+        },
+        "mainButton": "Let's work together!"  
+    },
+    "Header": {
+        "buttons": {
+            "home": "Home",
+            "skills": "Skills",
+            "about": "About Me",
+            "projects": "Projects"
+        },
+        "settings": {
+            "translate": "Switch language to",
+            "darkTheme": "Dark theme",
+            "lightTheme": "Light theme"
+        }
+    }
+}

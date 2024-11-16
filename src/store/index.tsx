@@ -19,6 +19,7 @@ const saveState = (state: { theme: any }) => {
     const serializedState = JSON.stringify(state.theme); 
     localStorage.setItem('themeState', serializedState);
   } catch (err) {
+    
   }
 };
 

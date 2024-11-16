@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { Colors } from "../../variables/Colors";
 
 const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+`
 
 const Title = styled.div`
 
@@ -27,4 +28,5 @@ const Icon = styled.img`
     border-radius: 3px;
 `
 
-export {Container, Title, Icon, IconWrap}
+
+export {Container, Title, IconWrap, Icon}

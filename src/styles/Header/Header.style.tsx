@@ -9,5 +9,5 @@ export const Container = styled.div`
     align-items: center;
     cursor: pointer;
     z-index: 5;
- 
+    padding-right: 1.2rem;
 `

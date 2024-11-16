@@ -8,9 +8,13 @@ import InfoString from "../components/AboutMe/InfoString"
 import Socials from "../components/AboutMe/Socials"
 import LetsWorkButton from "../components/AboutMe/LetsWorkButton"
 import { useColors } from "../variables/Colors"
+import { useTranslation } from "react-i18next"
 
 const AboutMe = () => {
   const colors = useColors()
+
+  const { t } = useTranslation();
+  
   return (
     <Wrap colors={colors}>
       <Content>
@@ -18,14 +22,14 @@ const AboutMe = () => {
         <MainImgWrap>
           <MainImg src={mainImg}/>
         </MainImgWrap>
-          <InfoString title="name" text="Nazdar Bolloev"/>
-          <InfoString title="specialty" text="React developer"/>
-          <InfoString title="date of birth" text="16.11.2004"/>
-          <InfoString title="live in" text="Tula, Russia"/>
-          <Socials title="socials" image={[github, vk, discord, telegram]}/>
+          <InfoString title={t('AboutMe.titles.name')} text={t('AboutMe.content.name')}/>
+          <InfoString title={t('AboutMe.titles.specialty')} text={t('AboutMe.content.specialty')}/>
+          <InfoString title={t('AboutMe.titles.dateOfBirth')} text={t('AboutMe.content.dateOfBirth')}/>
+          <InfoString title={t('AboutMe.titles.liveIn')} text={t('AboutMe.content.liveIn')}/>
+          <Socials title={t('AboutMe.titles.socials')} image={[github, vk, discord, telegram]}/>
         </InfoPart>
         <ButtonsPart>
-          <LetsWorkButton text="Let's work together"/>
+          <LetsWorkButton text={t('AboutMe.mainButton')}/>
         </ButtonsPart>
         </Content>
     </Wrap>
