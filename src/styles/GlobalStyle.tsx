@@ -14,16 +14,16 @@ body{
     background: ${({ colors }) => colors.bg};
 }
 
-.vk:hover {
+.vk${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
       background-color: ${({ colors }) => colors.buttons.vk};
   }
-.telegram:hover {
+.telegram${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
       background-color: ${({ colors }) => colors.buttons.telegram};
   }
-.discord:hover {
+.discord${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
       background-color: ${({ colors }) => colors.buttons.discord};
   }
-.github:hover {
+.github${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
       background-color: ${({ colors }) => colors.buttons.github};
   }
 

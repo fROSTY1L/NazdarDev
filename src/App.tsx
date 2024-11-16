@@ -1,6 +1,7 @@
 import AboutMe from "./layout/AboutMe"
 import Header from "./layout/Header"
-import { Content, Controls } from "./styles/App.style"
+import Home from "./layout/Home"
+import { Content, GlobalWrap } from "./styles/App.style"
 import { GlobalStyle } from "./styles/GlobalStyle"
 import { useColors } from "./variables/Colors"
 
@@ -10,14 +11,12 @@ function App() {
   return (
     <>
       <GlobalStyle colors={colors}/>
-      <Controls>
-        <AboutMe/>
-        <Header/>
-      </Controls>
-      <Content>
-        
-      </Content>
-      
+        <GlobalWrap>
+          <AboutMe/>
+        <Content>
+          <Home/>
+        </Content>
+      </GlobalWrap>
     </>
   )
 }

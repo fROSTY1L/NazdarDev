@@ -1,5 +1,4 @@
-import { ButtonsPart, Content, InfoPart, MainImg, MainImgWrap, Title, TitleImg, TitleText, Wrap } from "../styles/AboutMe.style"
-import logo from "../assets/AboutMe/logo.png"
+import { ButtonsPart, Content, InfoPart, MainImg, MainImgWrap, Wrap } from "../styles/AboutMe.style"
 import mainImg from "../assets/AboutMe/bat.png"
 import discord from "../assets/AboutMe/buttons/discord.png"
 import vk from "../assets/AboutMe/buttons/vk.png"
@@ -16,16 +15,10 @@ const AboutMe = () => {
     <Wrap colors={colors}>
       <Content>
         <InfoPart>
-        <Title>
-            <TitleImg src={logo}/>
-            <TitleText>
-                <p>Nazdar</p>
-                <p>Bolloev</p>
-            </TitleText>
-        </Title>
         <MainImgWrap>
           <MainImg src={mainImg}/>
         </MainImgWrap>
+          <InfoString title="name" text="Nazdar Bolloev"/>
           <InfoString title="specialty" text="React developer"/>
           <InfoString title="date of birth" text="16.11.2004"/>
           <InfoString title="live in" text="Tula, Russia"/>

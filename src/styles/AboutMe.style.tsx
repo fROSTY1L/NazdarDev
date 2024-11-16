@@ -3,23 +3,23 @@ import { Colors } from "../variables/Colors";
 
 
 const Wrap = styled.div<{colors: Colors}>`
-  border-radius: .5rem;
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
   background: ${({ colors }) => colors.menu};
-  height: calc(100vh - .6rem);
-  width: 18rem;
-  margin: .3rem;
+  height: calc(100vh);
   padding: 1rem;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   @media (max-width: 768px) {
       display: none;
     }
+  ${({colors}) => colors.border == '' ? `` : `border: 1px solid ${colors.border}`}
+  z-index: 5;
 `
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
-  color: white;
 `
 
 const InfoPart = styled.div`
@@ -29,12 +29,13 @@ const InfoPart = styled.div`
   align-items: center;
   width: 100%;
   gap: 1.2rem;
+  
 `
 export const gradientAnimation = `
 background: linear-gradient(45deg, 
         #5221E6,
         #71bdd9, 
-        #2E283D
+        #0072F7
         
     );
   background-size: 400% 400%;
@@ -46,14 +47,7 @@ background: linear-gradient(45deg,
   } 
 `
 
-const Title = styled.div`
-  font-weight: 900;
-  display: flex;
-  position: relative;
-  align-items: center;
-  width: 100%;
-  gap: .2rem;
-`
+
 const MainImgWrap = styled.div`
   width: 100%;
   border-radius: .5rem;
@@ -65,12 +59,7 @@ const MainImg = styled.img`
   
 `
 
-const TitleText = styled.div`
-`
 
-const TitleImg = styled.img`
-  width: 3rem;
-`
 
 const AboutMeInfo = styled.div`
  width: 100%;
@@ -79,8 +68,9 @@ const AboutMeInfoTitle = styled.p<{ colors: Colors }>`
   color: ${({ colors }) => colors.text.gray};
   font-size: .7rem
 `
-const AboutMeInfoText = styled.p`
-  font-size: .8rem
+const AboutMeInfoText = styled.p<{ colors: Colors }>`
+  font-size: .8rem;
+  color: ${({ colors }) => colors.text.main};
 `
 
 const ButtonsPart = styled.div`
@@ -108,7 +98,7 @@ const ButtonWrap = styled.div<{ colors: Colors }>`
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease; 
-
+  
 `
 
 const MainButton = styled.div`
@@ -125,7 +115,7 @@ const MainButton = styled.div`
     &:active {
         transform: scale(0.98);  
     }
-  
+  color: #ffffff;
 `
 
 export const fadeIn = keyframes`
@@ -180,6 +170,6 @@ const ModalContainer = styled.div<{ isOpen: boolean }>`
     animation: ${(props) => (props.isOpen ? fadeIn : fadeOut)} 0.3s forwards; // Анимация
 `;
 
-export { ModalBackground, ModalContainer, Wrap, Title, TitleText, TitleImg, Content, MainImg, MainImgWrap, AboutMeInfo, AboutMeInfoTitle, AboutMeInfoText, InfoPart, ButtonsPart, MainButton, AdditionalButtons, Button, ButtonWrap}
+export { ModalBackground, ModalContainer, Wrap, Content, MainImg, MainImgWrap, AboutMeInfo, AboutMeInfoTitle, AboutMeInfoText, InfoPart, ButtonsPart, MainButton, AdditionalButtons, Button, ButtonWrap}
 
 

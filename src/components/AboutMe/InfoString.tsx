@@ -14,7 +14,7 @@ const InfoString = (props: InfoStringProps) => {
         <AboutMeInfoTitle colors={colors}>
           {props.title}
         </AboutMeInfoTitle>
-        <AboutMeInfoText>
+        <AboutMeInfoText colors={colors}>
           {props.text}
         </AboutMeInfoText>
     </AboutMeInfo>

@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
-const Controls = styled.div`
-    position: sticky;
-    display: flex;
-    top: 0;
-`
-
 const Content = styled.div`
-
+    position: relative;
 `
 
-export {Controls, Content}
+const GlobalWrap = styled.div`
+    width: 100vw;
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: calc(18rem) calc(100vw - 18rem);
+    }
+    
+`
+
+export { Content, GlobalWrap }

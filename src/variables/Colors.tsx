@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 
 export interface Colors {
+    theme: string,
     menu: string,
     bg: string,
     text: {
@@ -9,6 +10,7 @@ export interface Colors {
         title: string,
         gray: string
     },
+    border: string,
     buttons: {
         vk: string,
         telegram: string,
@@ -22,6 +24,7 @@ export const useColors = () => {
 
     return theme === 'dark' ? 
     {
+        theme: 'dark',
         menu: '#2D2E31',
         bg: '#202124',
         text: {
@@ -29,6 +32,7 @@ export const useColors = () => {
             title: '',
             gray: '#737272'
         },
+        border: '',
         buttons: {
             vk: '#0072F7',
             telegram: '#28A4E4',
@@ -37,13 +41,15 @@ export const useColors = () => {
         } 
     } : 
     {
-        menu: '#2D2E31',
+        theme: 'light',
+        menu: '',
         bg: 'white',
         text: {
-            main: '',
-            title: '',
-            gray: '#737272'
+            main: '#0072F7',
+            title: '#6270DF',
+            gray: 'black'
         },
+        border: '#0072F7',
         buttons: {
             vk: '#0072F7',
             telegram: '#28A4E4',

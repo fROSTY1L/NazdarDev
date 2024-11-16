@@ -2,17 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
-    width: calc(100vw - 18.6rem);
+    width: 100%;
     height: 4rem;
     justify-content: end;
     gap: 1rem;
     align-items: center;
-    margin: 0 2rem;
     cursor: pointer;
-
-    @media (max-width: 768px) {
-      width: 100vw;
-      justify-content: space-between;
-    }
-      
+    z-index: 5;
+ 
 `
