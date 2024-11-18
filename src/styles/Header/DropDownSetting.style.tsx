@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Colors } from "../../variables/Colors";
+import { nonSelectable } from "../NonSelectable";
 
 const slideDown = keyframes`
   from {
@@ -26,6 +27,7 @@ const slideUp = keyframes`
 const MenuContainer = styled.div`
   position: relative;
   display: inline-block;
+  ${nonSelectable}
 `;
 
 const Button = styled.button`

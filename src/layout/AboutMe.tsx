@@ -1,5 +1,5 @@
 import { ButtonsPart, Content, InfoPart, MainImg, MainImgWrap, Wrap } from "../styles/AboutMe.style"
-import mainImg from "../assets/AboutMe/bat.png"
+import mainImg from "../assets/AboutMe/Person=Mattew, Skin Tone=White, Posture=27 Sh!.png"
 import discord from "../assets/AboutMe/buttons/discord.png"
 import vk from "../assets/AboutMe/buttons/vk.png"
 import telegram from "../assets/AboutMe/buttons/telegram.png"

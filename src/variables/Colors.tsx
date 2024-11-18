@@ -42,7 +42,7 @@ export const useColors = () => {
     } : 
     {
         theme: 'light',
-        menu: '',
+        menu: 'white',
         bg: 'white',
         text: {
             main: '#0072F7',

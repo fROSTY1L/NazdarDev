@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle<{colors: Colors}>`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", serif;
+    font-family: "Syne", sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -27,10 +27,6 @@ body{
       background-color: ${({ colors }) => colors.buttons.github};
   }
 
-.non-selectable {
-    user-select: none; 
-    -webkit-user-select: none;
-    -moz-user-select: none; 
-    -ms-user-select: none;
 }
 `
+

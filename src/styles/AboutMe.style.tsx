@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Colors } from "../variables/Colors";
+import { nonSelectable } from "./NonSelectable";
 
 
 const Wrap = styled.div<{colors: Colors}>`
@@ -53,20 +54,20 @@ const MainImgWrap = styled.div`
   border-radius: .5rem;
   text-align: center;
   ${gradientAnimation};
+  ${nonSelectable};
 `
 const MainImg = styled.img`
   width: 95%;
   
 `
 
-
-
 const AboutMeInfo = styled.div`
  width: 100%;
 `
 const AboutMeInfoTitle = styled.p<{ colors: Colors }>`
   color: ${({ colors }) => colors.text.gray};
-  font-size: .7rem
+  font-size: .7rem;
+  ${nonSelectable}
 `
 const AboutMeInfoText = styled.p<{ colors: Colors }>`
   font-size: .8rem;
@@ -83,6 +84,7 @@ const AdditionalButtons = styled.div`
   display: flex;
   width: 95%;
   gap: .4rem;
+  ${nonSelectable};
 `
 const Button = styled.img`
   width: 90%;
@@ -116,6 +118,7 @@ const MainButton = styled.div`
         transform: scale(0.98);  
     }
   color: #ffffff;
+  ${nonSelectable}
 `
 
 export const fadeIn = keyframes`

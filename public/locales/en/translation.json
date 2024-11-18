@@ -27,5 +27,12 @@
             "darkTheme": "Dark theme",
             "lightTheme": "Light theme"
         }
+    },
+    "Home": {
+        "title": {
+            "name": "I`m Nazdar Bolloev",
+            "specialty": "web-developer"
+        },
+        "button": "My projects"
     }
 }

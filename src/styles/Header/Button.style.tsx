@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "../../variables/Colors";
+import { nonSelectable } from "../NonSelectable";
 
 export const ButtonWrap = styled.div<{colors: Colors}>`
   background: ${({ colors }) => colors.menu};
@@ -11,6 +12,7 @@ export const ButtonWrap = styled.div<{colors: Colors}>`
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  ${nonSelectable}
   transition: transform 0.3s ease, background-color 0.3s ease; 
     &:hover {
         transform: scale(1.05); 
@@ -18,5 +20,6 @@ export const ButtonWrap = styled.div<{colors: Colors}>`
     &:active {
         transform: scale(0.98);  
     }
+
 
 `
