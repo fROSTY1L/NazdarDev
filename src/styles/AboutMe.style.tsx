@@ -4,8 +4,6 @@ import { nonSelectable } from "./NonSelectable";
 
 
 const Wrap = styled.div<{colors: Colors}>`
-  border-top-right-radius: .5rem;
-  border-bottom-right-radius: .5rem;
   background: ${({ colors }) => colors.menu};
   height: calc(100vh);
   padding: 1rem;
@@ -13,8 +11,9 @@ const Wrap = styled.div<{colors: Colors}>`
   @media (max-width: 768px) {
       display: none;
     }
-  ${({colors}) => colors.border == '' ? `` : `border: 1px solid ${colors.border}`}
-  z-index: 5;
+  ${({colors}) => colors.border == '' ? `` : `border-right: 1px solid ${colors.border}`}
+  
+  
 `
 const Content = styled.div`
   display: flex;

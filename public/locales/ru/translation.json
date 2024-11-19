@@ -35,6 +35,13 @@
             "specialty": "веб-разработчик"
         },
         "button": "Мои проекты"
+    },
+    "Skills": {
+        "titles": {
+            "design": "Дизайн",
+            "front": "Frontend",
+            "back": "Backend"
+        }
     }
 
 }

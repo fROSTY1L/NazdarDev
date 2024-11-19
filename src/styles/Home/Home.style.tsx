@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Wrap = styled.div<{url: string}>`
+const Wrap = styled.section<{url: string}>`
     position: relative;
     color: white;
     background-image: url(${({url}) => url}); 

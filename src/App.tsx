@@ -1,6 +1,8 @@
 import AboutMe from "./layout/AboutMe"
+import Header from "./layout/Header"
 import Home from "./layout/Home"
-import { Content, GlobalWrap } from "./styles/App.style"
+import Skills from "./layout/Skills"
+import { Content, GlobalWrap, LeftMenu } from "./styles/App.style"
 import { GlobalStyle } from "./styles/GlobalStyle"
 import { useColors } from "./variables/Colors"
 
@@ -11,9 +13,13 @@ function App() {
     <>
       <GlobalStyle colors={colors}/>
         <GlobalWrap>
-          <AboutMe/>
-        <Content>
+          <LeftMenu >
+            <AboutMe/>
+          </LeftMenu> 
+        <Content colors={colors}>
+          <Header/>
           <Home/>
+          <Skills/>
         </Content>
       </GlobalWrap>
     </>

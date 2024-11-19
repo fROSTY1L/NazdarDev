@@ -34,5 +34,12 @@
             "specialty": "web-developer"
         },
         "button": "My projects"
+    },
+    "Skills": {
+        "titles": {
+            "design": "Design",
+            "front": "Frontend",
+            "back": "Backend"
+        }
     }
 }

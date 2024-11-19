@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import modalReducer from "./modalReducer";
 import themeReducer from "./themeReducer";
+import skillReducer from "./skillReducer";
+import activeButtonReducer from "./activeButtonReducer";
 
 const loadState = () => {
   try {
@@ -28,6 +30,8 @@ export const store = configureStore({
   reducer: {
     modal: modalReducer,
     theme: themeReducer,
+    skill: skillReducer,
+    activeButton: activeButtonReducer
   },
 });
 

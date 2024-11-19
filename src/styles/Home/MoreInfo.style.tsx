@@ -18,8 +18,8 @@ const Container = styled.div`
 `;
 
 const RoundText = styled.img`
-  width: 10rem; 
-  height: 10rem; 
+  width: 9rem; 
+  height: 9rem; 
   border-radius: 50%; 
   animation: ${rotate} 10s linear infinite; 
   object-fit: cover; 

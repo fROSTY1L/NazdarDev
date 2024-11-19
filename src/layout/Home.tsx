@@ -4,15 +4,13 @@ import MoreInfo from "../components/Home/MoreInfo"
 import { ContentWrap, MoreInfoWrap, Name, Title, TitleWrap } from "../styles/Home/Content.style"
 import { Wrap } from "../styles/Home/Home.style"
 import image from './../assets/Home/Background.png'
-import Header from "./Header"
 import { useColors } from "../variables/Colors"
 
 const Home = () => {
   const { t } = useTranslation();
   const colors = useColors()
   return (
-    <Wrap url={image}>
-      <Header/>
+    <Wrap url={image} id="home">
       <ContentWrap>
         <TitleWrap colors={colors}>
           <Name>

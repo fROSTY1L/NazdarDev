@@ -2,9 +2,7 @@ import styled from "styled-components";
 import { Colors } from "../../variables/Colors";
 import { nonSelectable } from "../NonSelectable";
 
-export const ButtonWrap = styled.div<{colors: Colors}>`
-  background: ${({ colors }) => colors.menu};
-  color: ${({ colors }) => colors.text.main};
+export const ButtonWrap = styled.div<{colors: Colors, isActive: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +17,12 @@ export const ButtonWrap = styled.div<{colors: Colors}>`
     }
     &:active {
         transform: scale(0.98);  
-    }
-
+    } 
+  background-color: ${({ isActive }) => (isActive ? ({ colors }) => colors.menu : 'transparent')};
+  color: ${({ isActive }) => (isActive ? ({ colors }) => colors.text.main : ({ colors }) => colors.text.gray)};
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 
 `

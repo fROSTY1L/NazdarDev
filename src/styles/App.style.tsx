@@ -1,16 +1,20 @@
 import styled from "styled-components";
+import { Colors } from "../variables/Colors";
 
-const Content = styled.div`
-    position: relative;
+const Content = styled.div<{colors: Colors}>`
+  position: relative;
+  padding-left: 18rem;
+  z-index: 1;
+`
+
+const LeftMenu = styled.div`
+  position: fixed;
+  z-index: 5;
 `
 
 const GlobalWrap = styled.div`
-    width: 100vw;
-    @media (min-width: 768px) {
-      display: grid;
-      grid-template-columns: calc(18rem) calc(100vw - 18rem);
-    }
+  width: 99vw;
     
 `
 
-export { Content, GlobalWrap }
+export { Content, GlobalWrap , LeftMenu}
