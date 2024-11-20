@@ -7,8 +7,9 @@ const Wrap = styled.div<{colors: Colors}>`
   background: ${({ colors }) => colors.menu};
   height: calc(100vh);
   padding: 1rem;
+  
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-  @media (max-width: 768px) {
+  @media (max-width: 1300px){
       display: none;
     }
   ${({colors}) => colors.border == '' ? `` : `border-right: 1px solid ${colors.border}`}

@@ -15,6 +15,9 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   cursor: pointer;
+  @media(max-width: 1100px) {
+    display: none;
+  }
 `;
 
 const RoundText = styled.img`

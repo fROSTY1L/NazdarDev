@@ -3,7 +3,9 @@ import { Colors } from "../variables/Colors";
 
 const Content = styled.div<{colors: Colors}>`
   position: relative;
-  padding-left: 18rem;
+  @media(min-width: 1300px) {
+    padding-left: 18rem;
+  }
   z-index: 1;
 `
 
@@ -13,8 +15,7 @@ const LeftMenu = styled.div`
 `
 
 const GlobalWrap = styled.div`
-  width: 99vw;
-    
+  width: 98vw;
 `
 
-export { Content, GlobalWrap , LeftMenu}
+export { Content, GlobalWrap , LeftMenu }
