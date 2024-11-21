@@ -31,17 +31,22 @@
     },
     "Home": {
         "title": {
-            "name": "Имя: Боллоев Наздар",
+            "name": "Боллоев Наздар",
             "specialty": "веб-разработчик"
         },
         "button": "Мои проекты"
     },
     "Skills": {
         "titles": {
+            "main": "Навыки",
             "design": "Дизайн",
             "front": "Frontend",
             "back": "Backend"
         }
+        
+    },
+    "Modal": {
+        "title": "Контакты"
     }
 
 }

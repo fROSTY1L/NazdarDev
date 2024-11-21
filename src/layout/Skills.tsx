@@ -37,7 +37,7 @@ const Skills = () => {
 
   return (
     <Container colors={colors} url={background} id='skills'>
-      <Title>I can...</Title>
+      <Title>{t('Skills.titles.main')}</Title>
       <SkillsContainer>
         <Skill title={t('Skills.titles.front')} techList={frontendList.techUrl} techNames={frontendList.techNames}/>
         <Skill title={t('Skills.titles.design')} techList={designList.techUrl} techNames={designList.techNames}/>

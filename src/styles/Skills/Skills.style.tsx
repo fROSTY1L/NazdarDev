@@ -25,11 +25,10 @@ const Container = styled.section<{colors: Colors, url: string}>`
     background-repeat: no-repeat;
     color: ${({colors}) => colors.text.main};
     padding: 5rem 5rem;
-    display: flex;
-    flex-direction: column;
-    @media(mix-width: 1300;) {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    @media(max-width: 1300px){
+      display: block;
     }
     
 `
@@ -50,7 +49,7 @@ const SkillWrap = styled.div`
 `
 
 const SkillTitle = styled.div`
-    font-size: 5rem;
+    font-size: 3rem;
     cursor: pointer;
 `
 
@@ -60,7 +59,6 @@ const Description = styled.div`
     animation: ${slideDown} 0.5s forwards;
     gap: 1rem;
     padding-bottom: 1rem;
-    
 `
 
 const Divider = styled.hr<{colors: Colors}>`

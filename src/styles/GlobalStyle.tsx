@@ -26,7 +26,9 @@ body{
 .github${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
       background-color: ${({ colors }) => colors.buttons.github};
   }
-
+a {
+    all: unset;y
+}
 }
 `
 

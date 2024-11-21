@@ -9,5 +9,13 @@ const Wrap = styled.section<{url: string}>`
     height: 100vh;
 `
 
-export { Wrap }
+const ButtonsContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+    &:last-child{
+        
+    }
+`
+export { Wrap, ButtonsContainer }
 

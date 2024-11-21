@@ -37,9 +37,14 @@
     },
     "Skills": {
         "titles": {
+            "main": "Skills",
             "design": "Design",
             "front": "Frontend",
             "back": "Backend"
-        }
+        }  
+    },
+    "Modal": {
+        "title": "Contacts"
     }
+
 }
