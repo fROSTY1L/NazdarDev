@@ -15,7 +15,8 @@ const LeftMenu = styled.div`
 `
 
 const GlobalWrap = styled.div`
-  width: 98vw;
+  width: 99vw;
+  display: grid;
 `
 
 export { Content, GlobalWrap , LeftMenu }

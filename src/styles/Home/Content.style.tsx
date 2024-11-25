@@ -9,7 +9,6 @@ const ContentWrap = styled.div`
     padding-top: 10rem;
     justify-content: space-between;
     @media(max-width: 740px){
-        padding-left: 0rem;
         padding-top: 0rem;
     }
     ${nonSelectable}

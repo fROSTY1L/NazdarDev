@@ -9,6 +9,7 @@ export const ButtonWrap = styled.div<{colors: Colors, isActive: boolean}>`
   height: 2rem;
   padding: 1rem;
   border-radius: 1rem;
+  z-index: 10;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   ${nonSelectable}
   transition: transform 0.3s ease, background-color 0.3s ease; 

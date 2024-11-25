@@ -14,24 +14,56 @@ const slideDown = keyframes`
 `;
 
 
+const fadeInFromTop = keyframes`
+    0% {
+        background-position: top;
+        opacity: 0;
+    }
+    100% {
+        background-position: center;
+        opacity: 1;
+    }
+`;
+
+const shake = keyframes`
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(1rem);
+    }
+`;
+
 const Container = styled.section<{colors: Colors, url: string}>`
     height: 100vh;
     width: 100%;
     padding-right: 5rem;
-    background: ${({colors}) => colors.bg}
-    position: relative;
-    background-image: url(${({url}) => url}); 
-    background-size: 100%;
-    background-repeat: no-repeat;
+    position: relative; 
     color: ${({colors}) => colors.text.main};
     padding: 5rem 5rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    @media(max-width: 1300px){
-      display: block;
-    }
     
-`
+
+    @media(max-width: 1300px){
+        display: block;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url(${({url}) => url});
+        background-size: cover; 
+        background-repeat: no-repeat;
+        opacity: 0;
+        animation: ${fadeInFromTop} 5s ease forwards, ${shake} 5s ease-in-out infinite; 
+        z-index: -1; 
+    }
+`;
 const Title = styled.div`
     font-size: 5rem;
     padding-bottom: 2rem;

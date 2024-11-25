@@ -23,6 +23,7 @@ export const fadeOut = keyframes`
     }
 `;
 
+
 const ModalBackground = styled.div`
     position: fixed;
     top: 0;
@@ -45,69 +46,76 @@ const ModalContainer = styled.div<{ isOpen: boolean, colors: Colors }>`
     border-radius: 1rem; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: ${({colors}) => colors.text.main};
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: .5rem;
-    padding: 1rem;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
     position: relative;
-    animation: ${(props) => (props.isOpen ? fadeIn : fadeOut)}
+    overflow: hidden;
+    animation: ${(props) => (props.isOpen ? fadeIn : fadeOut)} 1s;
 `;
 
-const Title = styled.div`
-    font-size: 4rem;
+const ContactBarWrap = styled.div`
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+    &:last-child {
+        border: none;
+    }
+`
+const ContactBar = styled.div<{bgColor: string}>`
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: ${({bgColor}) => bgColor};
+    transition: transform .3s ease;
+    transition: justify-content .5 ease;
+    ${ContactBarWrap}:hover &{
+        padding-left: 1.4rem;
+        transform: translateX(80%);
+        justify-content: start; 
+    }
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+        padding-left: 1.4rem; 
+        transform: translateX(80%); 
+        justify-content: start; 
+    }
+
 `
 
-const ContactContainer = styled.div`
-    
+const ContactBarTextWrap = styled.div`
+
 `
-const ContactWrap = styled.div<{colors: Colors}>`
-    background: ${({colors}) => colors.menu}; 
-    height: 2.5rem;
+
+const ContactBarText = styled.div<{colors: Colors}>`
+    background: ${({colors}) => colors.menu};
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    padding-left: 2rem;
+    padding-right: 3rem;
+    margin-left: 2rem;
+    margin-right: 6rem;
+    border-radius: 1rem;
+    width: 100%;
+    height: 40%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    border-radius: 1rem;
-    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 `
 
-const ContactTitle = styled.div<{colors: Colors}>`
-    color: ${({colors}) => colors.text.gray};
-    font-size: .8rem;
-    padding-left: 1rem;
-`
-const ContactText = styled.div<{colors: Colors}>`
-    padding-left: 1rem;
-    cursor: pointer;
-`
 
-const ContactIconWrap = styled.div<{hex: string}>`
-    height: 100%;
-    background: ${({hex}) => hex};
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    width: 4rem;
-    padding-right: 1rem;
-    border-radius: 0 1rem 1rem 0 ;
-`
-const RightColumn = styled.div`
-    height: 100%;
-    display: flex;
-    justify-content: end; 
-    gap: .3rem;
-    align-items: center;
-`
 
 const ContactIcon = styled.img`
-    height: 1.6rem;
-
+    height: 80%;
+    
 `
 
-const CopyIcon = styled.img`
-    height: 1.5rem;
-    cursor: pointer;
-`
 
-export {ModalBackground, ModalContainer, ContactContainer, ContactIcon, Title, ContactTitle, RightColumn, CopyIcon, ContactIconWrap, ContactText, ContactWrap}
+export { ModalBackground, ModalContainer, ContactBar, ContactBarWrap, ContactIcon, ContactBarText, ContactBarTextWrap }

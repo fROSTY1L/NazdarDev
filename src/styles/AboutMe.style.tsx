@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled  from "styled-components";
 import { Colors } from "../variables/Colors";
 import { nonSelectable } from "./NonSelectable";
 
@@ -100,7 +100,6 @@ const ButtonWrap = styled.div<{ colors: Colors }>`
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease; 
-  
 `
 
 const MainButton = styled.div`

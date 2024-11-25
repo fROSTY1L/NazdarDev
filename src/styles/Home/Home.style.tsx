@@ -1,21 +1,56 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInFromTop = keyframes`
+    0% {
+        background-position: top;
+        opacity: 0;
+    }
+    100% {
+        background-position: center;
+        opacity: 1;
+    }
+`;
+
+const shake = keyframes`
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1rem);
+    }
+`;
 
 const Wrap = styled.section<{url: string}>`
     position: relative;
     color: white;
-    background-image: url(${({url}) => url}); 
-    background-size: 100%;
-    background-repeat: no-repeat;
     height: 100vh;
-`
+    overflow: hidden; 
+    z-index: -20;
+    &::before {
+        z-index: -20;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 10rem;
+        background-image: url(${({url}) => url});
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0;
+        animation: ${fadeInFromTop} 5s ease forwards, ${shake} 5s ease-in-out infinite; 
+    }
+`;
 
 const ButtonsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 2rem;
-    &:last-child{
-        
+    @media(max-width: 716px) {
+        display: flex;
+        flex-direction: column;
     }
+
 `
 export { Wrap, ButtonsContainer }
 
