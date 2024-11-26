@@ -22,8 +22,13 @@ export const ButtonWrap = styled.div<{colors: Colors, isActive: boolean}>`
   background-color: ${({ isActive }) => (isActive ? ({ colors }) => colors.menu : 'transparent')};
   color: ${({ isActive }) => (isActive ? ({ colors }) => colors.text.main : ({ colors }) => colors.text.gray)};
   border: none;
-  padding: 10px 15px;
+  
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 
+  @media(max-width: 475px) {
+        height: 1rem;
+        padding: .5rem;
+        font-size: .8rem;
+    }
 `

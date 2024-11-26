@@ -3,10 +3,17 @@ import { Colors } from "../variables/Colors";
 
 const Content = styled.div<{colors: Colors}>`
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   @media(min-width: 1300px) {
     padding-left: 18rem;
   }
-  z-index: 1;
+  @media(max-width: 475px) {
+    margin-top: -5rem;
+    width: 100vw;
+  }
+  z-index: 0;
 `
 
 const LeftMenu = styled.div`
@@ -15,7 +22,7 @@ const LeftMenu = styled.div`
 `
 
 const GlobalWrap = styled.div`
-  width: 99vw;
+  width: 100%;
   display: grid;
 `
 

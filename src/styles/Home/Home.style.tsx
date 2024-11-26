@@ -21,10 +21,10 @@ const shake = keyframes`
 `;
 
 const Wrap = styled.section<{url: string}>`
-    position: relative;
     color: white;
     height: 100vh;
     overflow: hidden; 
+    position: relative;
     z-index: -20;
     &::before {
         z-index: -20;
@@ -40,17 +40,22 @@ const Wrap = styled.section<{url: string}>`
         opacity: 0;
         animation: ${fadeInFromTop} 5s ease forwards, ${shake} 5s ease-in-out infinite; 
     }
+    @media(max-width: 475px) {
+        font-size: 1rem;
+        padding-left: .1rem;  
+    }
 `;
 
 const ButtonsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 2rem;
-    @media(max-width: 716px) {
+
+    @media (max-width: 716px) {
         display: flex;
         flex-direction: column;
+        gap: 1rem; 
     }
+`;
 
-`
-export { Wrap, ButtonsContainer }
-
+export { Wrap, ButtonsContainer };

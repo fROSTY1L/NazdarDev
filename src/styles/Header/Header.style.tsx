@@ -5,13 +5,19 @@ export const Container = styled.div`
     top: 0;
     right: 0;
     display: flex;
-    width: 100%;
     height: 4rem;
-    justify-content: end;
     gap: 1rem;
     align-items: center;
     cursor: pointer;
     z-index: 5;
     padding-right: 1.2rem;
     background: rgba(255, 255, 255, 0);
-`
+    @media (max-width: 768px) {
+        height: 3rem; 
+        padding-right: 0.8rem; 
+        gap: 0.5rem; 
+    }
+    @media(max-width: 430px) {
+        height: 2rem;
+    }
+`;

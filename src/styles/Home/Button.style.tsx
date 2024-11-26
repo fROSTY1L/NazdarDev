@@ -13,7 +13,12 @@ const Container = styled.div<{colors: Colors}>`
     background: ${({colors}) => colors.menu};
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     border: 1px solid ${({colors}) => colors.text.main};
-    ${nonSelectable}
+    ${nonSelectable};
+    @media(max-width: 475px) {
+        height: 2.5rem;
+        border-radius: .5rem;
+        padding: .1rem .5rem;  
+    }
 `
 
 const Icon = styled.img`
@@ -22,6 +27,10 @@ const Icon = styled.img`
 
 const Text = styled.div<{colors: Colors}>`
     font-size: 1.2rem;
+    @media(max-width: 475px) {
+        font-size: .9rem;
+        
+    }
     color: ${({colors}) => colors.text.main}
 `
 

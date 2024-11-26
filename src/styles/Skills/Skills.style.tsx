@@ -36,17 +36,18 @@ const shake = keyframes`
 
 const Container = styled.section<{colors: Colors, url: string}>`
     height: 100vh;
-    width: 100%;
     padding-right: 5rem;
     position: relative; 
     color: ${({colors}) => colors.text.main};
     padding: 5rem 5rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    
 
     @media(max-width: 1300px){
         display: block;
+    }
+    @media(max-width: 475px) {
+        padding: 0;
     }
 
     &::before {
@@ -67,6 +68,10 @@ const Container = styled.section<{colors: Colors, url: string}>`
 const Title = styled.div`
     font-size: 5rem;
     padding-bottom: 2rem;
+    @media(max-width: 475px) {
+        font-size: 3rem;
+        padding-bottom: .5rem;
+    }
 `
 
 const SkillsContainer = styled.div`
@@ -83,6 +88,10 @@ const SkillWrap = styled.div`
 const SkillTitle = styled.div`
     font-size: 3rem;
     cursor: pointer;
+    @media(max-width: 475px) {
+        font-size: 2rem;
+        
+    }
 `
 
 const Description = styled.div`
@@ -113,6 +122,10 @@ const TechWrap = styled.div<{colors: Colors}>`
     padding: .7rem;
     gap: 1rem;
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    @media(max-width: 475px) {
+        font-size: 1rem;
+        padding-left: .1rem;  
+    }
 `
 
 const TechText = styled.div<{isVisible: string}>`
@@ -124,7 +137,9 @@ const TechIcon = styled.img`
     height: 100%;
     width: fit-content;
     ${nonSelectable};
-    
+    @media(max-width: 475px) {
+        height: 50%;    
+    }
 `
 
 const OpenDescription = styled.img<{isOpen: boolean}>`

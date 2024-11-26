@@ -9,14 +9,17 @@ const ContentWrap = styled.div`
     padding-top: 10rem;
     justify-content: space-between;
     @media(max-width: 740px){
-        padding-top: 0rem;
+        padding: 0rem;
     }
-    ${nonSelectable}
+    
+    ${nonSelectable};
+    
 `
 
 const TitleWrap = styled.div<{colors: Colors}>`
     display: flex;
     flex-direction: column;
+    
     height: 100%;
     justify-content: center;
     color: ${({colors}) => colors.text.main}
@@ -30,12 +33,16 @@ const MoreInfoWrap = styled.div`
 
 const Name = styled.p`
     font-size: 4rem;
+    @media(max-width: 740px){
+        font-size: 2rem;
+    }
+        
 `
 const Title = styled.p`
     font-size: 8rem;
     margin-bottom: 2rem;
     @media(max-width: 740px){
-        font-size: 5rem;
+        font-size: 4rem;
     }
 `
 
