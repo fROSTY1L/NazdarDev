@@ -33,11 +33,20 @@ const ModalBackground = styled.div`
     background: rgba(0, 0, 0, 0.5); 
     backdrop-filter: blur(5px); 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 100; 
 `;
 
+const ModalInstruction = styled.p<{colors: Colors}>`
+    @media(min-width: 475px){
+        display: none;
+    }
+    display: block;
+    color: ${({colors}) => colors.text.gray}
+    
+`
 
 const ModalContainer = styled.div<{ isOpen: boolean, colors: Colors }>`
     width: 40rem;
@@ -46,14 +55,16 @@ const ModalContainer = styled.div<{ isOpen: boolean, colors: Colors }>`
     border-radius: 1rem; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: ${({colors}) => colors.text.main};
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
+    border: 1px solid white;
     animation: ${(props) => (props.isOpen ? fadeIn : fadeOut)} 1s;
 `;
 
 const ContactBarWrap = styled.div`
+    height: 10rem;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -66,15 +77,15 @@ const ContactBarWrap = styled.div`
 `
 const ContactBar = styled.div<{bgColor: string}>`
     position: absolute;
-    top: 0;
-    right: 0;
+    bottom,: 0;
+    left: 0;
     width: 100%;
     height: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
     background: ${({bgColor}) => bgColor};
-    transition: transform .3s ease;
+    transition: transform 1s ease;
     transition: justify-content .5 ease;
     ${ContactBarWrap}:hover &{
         padding-left: 1.4rem;
@@ -82,18 +93,11 @@ const ContactBar = styled.div<{bgColor: string}>`
         justify-content: start; 
     }
     cursor: pointer;
-
-    @media (max-width: 768px) {
-        padding-left: 1.4rem; 
-        transform: translateX(80%); 
-        justify-content: start; 
-    }
+    
 
 `
 
-const ContactBarTextWrap = styled.div`
 
-`
 
 const ContactBarText = styled.div<{colors: Colors}>`
     background: ${({colors}) => colors.menu};
@@ -118,4 +122,4 @@ const ContactIcon = styled.img`
 `
 
 
-export { ModalBackground, ModalContainer, ContactBar, ContactBarWrap, ContactIcon, ContactBarText, ContactBarTextWrap }
+export { ModalBackground, ModalContainer, ContactBar, ContactBarWrap, ContactIcon, ContactBarText, ModalInstruction }

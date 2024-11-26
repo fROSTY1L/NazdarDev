@@ -3,6 +3,7 @@ import { Colors } from "../variables/Colors";
 
 const Content = styled.div<{colors: Colors}>`
   position: relative;
+  
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -10,7 +11,7 @@ const Content = styled.div<{colors: Colors}>`
     padding-left: 18rem;
   }
   @media(max-width: 475px) {
-    margin-top: -5rem;
+    margin-top: 5rem;
     width: 100vw;
   }
   z-index: 0;
@@ -21,7 +22,8 @@ const LeftMenu = styled.div`
   z-index: 5;
 `
 
-const GlobalWrap = styled.div`
+const GlobalWrap = styled.div<{isBlur: boolean}>`
+  ${({isBlur}) => isBlur ? `filter: blur(5px);` : ``}
   width: 100%;
   display: grid;
 `

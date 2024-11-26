@@ -44,7 +44,8 @@
         }  
     },
     "Modal": {
-        "title": "Contacts"
+        "title": "Contacts",
+        "instruction": "hold for full information"
     }
 
 }

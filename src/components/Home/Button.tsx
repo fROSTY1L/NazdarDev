@@ -2,6 +2,10 @@ import { Container, Icon, Text } from "../../styles/Home/Button.style"
 import { useColors } from "../../variables/Colors"
 import { useSelector } from "react-redux"
 import { RootState } from "../../store"
+import iconDark from '../../assets/Home/Button/dark/icon.png'
+import iconLight from '../../assets/Home/Button/light/icon.png'
+
+
 interface ButtonProps{
   text: string,
   theme: 'light' | 'dark'
@@ -10,7 +14,8 @@ interface ButtonProps{
 const Button = (props: ButtonProps) => {
   const colors = useColors()
   const theme = useSelector((state: RootState) => state.theme.theme)
-  const iconSrc =  `src/assets/Home/Button/${theme}/icon.png`
+  const iconSrc =  theme == 'dark' ? iconDark : iconLight
+
   return (
     <Container colors={colors}>
       <Text colors={colors}>{props.text}</Text>

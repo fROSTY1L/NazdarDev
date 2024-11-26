@@ -47,7 +47,7 @@ const Container = styled.section<{colors: Colors, url: string}>`
         display: block;
     }
     @media(max-width: 475px) {
-        padding: 0;
+        padding: 1rem;
     }
 
     &::before {
@@ -75,7 +75,9 @@ const Title = styled.div`
 `
 
 const SkillsContainer = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 ` 
 const SkillWrap = styled.div`
     display: flex; 
@@ -99,7 +101,7 @@ const Description = styled.div`
     flex-direction: column;
     animation: ${slideDown} 0.5s forwards;
     gap: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: .1rem;
 `
 
 const Divider = styled.hr<{colors: Colors}>`
@@ -124,7 +126,8 @@ const TechWrap = styled.div<{colors: Colors}>`
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     @media(max-width: 475px) {
         font-size: 1rem;
-        padding-left: .1rem;  
+        padding-left: .4rem; 
+        height: 3rem; 
     }
 `
 

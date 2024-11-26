@@ -19,7 +19,6 @@ const ContentWrap = styled.div`
 const TitleWrap = styled.div<{colors: Colors}>`
     display: flex;
     flex-direction: column;
-    
     height: 100%;
     justify-content: center;
     color: ${({colors}) => colors.text.main}

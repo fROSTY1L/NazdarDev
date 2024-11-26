@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactBar, ContactBarText, ContactBarWrap, ContactIcon, ModalBackground, ModalContainer } from '../../styles/Modal.style';
+import { ContactBar, ContactBarText, ContactBarWrap, ContactIcon, ModalBackground, ModalContainer, ModalInstruction } from '../../styles/Modal.style';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { setModalState } from '../../store/modalReducer';
@@ -8,6 +8,8 @@ import phone from '../../assets/AboutMe/buttons/phone-call.png'
 import telegram from '../../assets/AboutMe/buttons/telegram.png'
 import vk from '../../assets/AboutMe/buttons/vk.png'
 import mail from '../../assets/AboutMe/buttons/email.png'
+import { useTranslation } from 'react-i18next';
+
 
 
 
@@ -17,6 +19,7 @@ const Modal: React.FC = () => {
     const isOpen = useSelector((state: RootState) => state.modal.isOpen)
     const dispatch = useDispatch()
 
+    const { t } = useTranslation();
     const handleClick = (url: string) => {
         window.open(url, '_blank'); 
     };
@@ -25,11 +28,12 @@ const Modal: React.FC = () => {
 
     return (
         <ModalBackground onClick={() => dispatch(setModalState(false))}>
+            <ModalInstruction colors={colors}>{t('Modal.instruction')}</ModalInstruction>
             <ModalContainer colors={colors} isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
                 <ContactBarWrap>
                     <ContactBarText colors={colors}>
                         <p>https://t.me/nazdarq</p>
-                        <p>| @nazdarq</p>
+                        
                     </ContactBarText>
                     <ContactBar bgColor={colors.buttons.telegram} onClick={() => handleClick('https://t.me/nazdarq')}>
                         <ContactIcon src={telegram}/>
@@ -38,7 +42,7 @@ const Modal: React.FC = () => {
                 <ContactBarWrap>
                     <ContactBarText colors={colors}>
                         <p>https://vk.com/nazdar1l</p>
-                        <p>| Nazdar Bolloev</p>  
+                        
                     </ContactBarText>
                 <ContactBar bgColor={colors.buttons.vk} onClick={() => handleClick('https://vk.com/nazdar1l')}>
                     <ContactIcon src={vk}/>
@@ -48,7 +52,7 @@ const Modal: React.FC = () => {
                     <ContactBarText colors={colors}>
                         <p>n.bolloev@mail.ru</p>
                     </ContactBarText>
-                    <ContactBar bgColor={colors.buttons.telegram}>
+                    <ContactBar bgColor={colors.buttons.telegram} onClick={() => handleClick("mailto:n.bolloev@mail.ru?subject=Совместная работа")}>
                         <ContactIcon src={mail}/>
                     </ContactBar>
                 </ContactBarWrap>

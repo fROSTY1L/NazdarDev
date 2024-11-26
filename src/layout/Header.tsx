@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <>
-    <Container>
+    <Container >
       <Button text={t('Header.buttons.home')} isActive={activeButton === 'home'} section='home'/>
       <Button text={t('Header.buttons.skills')} isActive={activeButton === 'skills'} section='skills'/>
       <Button text={t('Header.buttons.about')} isActive={activeButton === 'about'} section='about'/>
