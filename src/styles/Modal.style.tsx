@@ -93,7 +93,7 @@ const ContactBar = styled.div<{ bgColor: string, isClicked: boolean, hoveredColo
         padding-left: 1.4rem;
         transform: translateX(80%);
         justify-content: start;
-        margin-left: -1.7rem;` 
+        ` 
         : ``}
     &:hover{
         background: ${({hoveredColor}) => hoveredColor}
@@ -126,11 +126,13 @@ const ContactBarText = styled.div<{colors: Colors}>`
 
 
 
-const ContactIcon = styled.img`
+const ContactIcon = styled.img<{isClicked: boolean}>`
     height: 80%;
     @media(max-width: 475px){
         height: 60%;
-        
+        ${({isClicked}) => isClicked ?
+        `margin-left: -.5rem`
+        : ``
     }
     
 `

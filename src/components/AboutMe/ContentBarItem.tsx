@@ -23,7 +23,7 @@ const ContactBarItem: React.FC<ContactBarItemProps> = ({ url, icon,  bgColor, ho
 
     return (
         <ContactBar bgColor={bgColor} hoveredColor={hoveredColor} isClicked={count >= 1} onClick={handleClick}>
-            <ContactIcon src={icon} />
+            <ContactIcon isClicked={count >= 1} src={icon} />
         </ContactBar>
 
     );
