@@ -88,18 +88,22 @@ const AdditionalButtons = styled.div`
 const Button = styled.img`
   width: 90%;
 `
-const ButtonWrap = styled.div<{ colors: Colors }>`
+const ButtonWrap = styled.div<{ bgColor: string, hoveredColor: string}>`
   cursor: pointer;
   width: 1.8rem;
   height: 1.8rem;
   padding: .3rem;
   border-radius: .2rem;
-  background: ${({ colors }) => colors.bg};
+  background: ${({ bgColor }) => bgColor};
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
+  &:hover{
+    background: ${({hoveredColor}) => hoveredColor}
+  }
 `
+
 
 const MainButton = styled.div`
   text-align: center;

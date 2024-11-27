@@ -15,7 +15,13 @@ export interface Colors {
         vk: string,
         telegram: string,
         github: string,
-        discord: string
+        discord: string,
+        hovered: {
+            vk: string,
+            telegram: string,
+            github: string,
+            discord: string
+        }
     }
 }
 
@@ -34,10 +40,16 @@ export const useColors = () => {
         },
         border: '',
         buttons: {
-            vk: '#0072F7',
-            telegram: '#28A4E4',
-            github: '#FFB808',
-            discord: '#5661EA'
+            vk: '#202124',
+            telegram: '#202124',
+            github: '#202124',
+            discord: '#202124',
+            hovered: {
+                vk: '#0072F7',
+                telegram: '#28A4E4',
+                github: '#FFB808',
+                discord: '#5661EA'
+            }
         } 
     } : 
     {
@@ -54,7 +66,13 @@ export const useColors = () => {
             vk: '#0072F7',
             telegram: '#28A4E4',
             github: '#FFB808',
-            discord: '#5661EA'
+            discord: '#5661EA',
+            hovered: {
+                vk: '#0072F7',
+                telegram: '#28A4E4',
+                github: '#FFB808',
+                discord: '#5661EA'
+            }
         }
     };
 };

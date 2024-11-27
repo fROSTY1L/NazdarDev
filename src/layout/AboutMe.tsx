@@ -26,7 +26,7 @@ const AboutMe = () => {
           <InfoString title={t('AboutMe.titles.specialty')} text={t('AboutMe.content.specialty')}/>
           <InfoString title={t('AboutMe.titles.dateOfBirth')} text={t('AboutMe.content.dateOfBirth')}/>
           <InfoString title={t('AboutMe.titles.liveIn')} text={t('AboutMe.content.liveIn')}/>
-          <Socials title={t('AboutMe.titles.socials')} image={[github, vk, discord, telegram]}/>
+          <Socials />
         </InfoPart>
         <ButtonsPart>
           <LetsWorkButton text={t('AboutMe.mainButton')}/>

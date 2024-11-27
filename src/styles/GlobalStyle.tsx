@@ -13,19 +13,6 @@ export const GlobalStyle = createGlobalStyle<{colors: Colors}>`
 body{
     background: ${({ colors }) => colors.bg};
 }
-
-.vk${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
-      background-color: ${({ colors }) => colors.buttons.vk};
-  }
-.telegram${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
-      background-color: ${({ colors }) => colors.buttons.telegram};
-  }
-.discord${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
-      background-color: ${({ colors }) => colors.buttons.discord};
-  }
-.github${({colors}) => colors.theme == 'dark' ? `:hover` : ``} {
-      background-color: ${({ colors }) => colors.buttons.github};
-  }
       
 a {
     all: unset;

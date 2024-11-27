@@ -15,10 +15,10 @@ import docker from '../assets/Skills/icons/backend/docker.png'
 import postgres from '../assets/Skills/icons/backend/postgresql.png'
 import express from '../assets/Skills/icons/backend/Express JS.png'
 import Skill from '../components/Skills/Skill'
-import i18n from '../i18n'
+import { useTranslation } from 'react-i18next'
 
 const Skills = () => {
-  const { t } = i18n
+  const { t } = useTranslation()
 
   const colors = useColors()
 
