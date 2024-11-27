@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ContactBar, ContactBarText, ContactBarWrap, ContactIcon, ModalBackground, ModalContainer, ModalInstruction } from '../../styles/Modal.style';
+import React from 'react';
+import {  ContactBarText, ContactBarWrap, ModalBackground, ModalContainer, ModalInstruction } from '../../styles/Modal.style';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { setModalState } from '../../store/modalReducer';
@@ -18,17 +18,6 @@ const Modal: React.FC = () => {
 
     const { t } = useTranslation();
 
-    const [count, setCount] = useState(1);
-
-    const handleClick = (url: string) => { 
-        setCount((prevCount) => {
-            const newCount = (prevCount + 1) % 3;
-            return newCount;
-          });
-        count == 2 && window.open(url, '_blank') 
-    };
-
-    
 
     const colors = useColors()
 
