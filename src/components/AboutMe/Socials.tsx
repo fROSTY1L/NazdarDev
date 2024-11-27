@@ -14,7 +14,7 @@ const Socials = () => {
   return (
     <AboutMeInfo>
         <AboutMeInfoTitle colors={colors}>
-          {t('AboutMe.titles.social')}
+          {t('AboutMe.titles.socials')}
         </AboutMeInfoTitle>
         <AdditionalButtons>
           <ButtonWrap bgColor={colors.buttons.vk} hoveredColor={colors.buttons.hovered.vk}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ContactBar, ContactBarText, ContactBarWrap, ContactIcon, ModalBackground, ModalContainer, ModalInstruction } from '../../styles/Modal.style';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
@@ -9,10 +9,7 @@ import telegram from '../../assets/AboutMe/buttons/telegram.png'
 import vk from '../../assets/AboutMe/buttons/vk.png'
 import mail from '../../assets/AboutMe/buttons/email.png'
 import { useTranslation } from 'react-i18next';
-
-
-
-
+import ContactBarItem from './ContentBarItem';
 
 
 const Modal: React.FC = () => {
@@ -20,9 +17,18 @@ const Modal: React.FC = () => {
     const dispatch = useDispatch()
 
     const { t } = useTranslation();
-    const handleClick = (url: string) => {
-        window.open(url, '_blank'); 
+
+    const [count, setCount] = useState(1);
+
+    const handleClick = (url: string) => { 
+        setCount((prevCount) => {
+            const newCount = (prevCount + 1) % 3;
+            return newCount;
+          });
+        count == 2 && window.open(url, '_blank') 
     };
+
+    
 
     const colors = useColors()
 
@@ -32,39 +38,48 @@ const Modal: React.FC = () => {
             <ModalContainer colors={colors} isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
                 <ContactBarWrap>
                     <ContactBarText colors={colors}>
-                        <p>https://t.me/nazdarq</p>
-                        
+                        <p>https://t.me/nazdarq</p> 
                     </ContactBarText>
-                    <ContactBar bgColor={colors.buttons.telegram} onClick={() => handleClick('https://t.me/nazdarq')}>
-                        <ContactIcon src={telegram}/>
-                    </ContactBar>
+                    <ContactBarItem 
+                        url='https://t.me/nazdarq' 
+                        icon={telegram} 
+                        bgColor={colors.buttons.telegram} 
+                        hoveredColor={colors.buttons.hovered.telegram} 
+                    />
                 </ContactBarWrap>
                 <ContactBarWrap>
                     <ContactBarText colors={colors}>
                         <p>https://vk.com/nazdar1l</p>
-                        
                     </ContactBarText>
-                <ContactBar bgColor={colors.buttons.vk} onClick={() => handleClick('https://vk.com/nazdar1l')}>
-                    <ContactIcon src={vk}/>
-                </ContactBar>
+                    <ContactBarItem 
+                        url='https://vk.com/nazdar1l' 
+                        icon={vk}
+                        bgColor={colors.buttons.vk} 
+                        hoveredColor={colors.buttons.hovered.vk} 
+                    />
                 </ContactBarWrap>
                 <ContactBarWrap>
                     <ContactBarText colors={colors}>
                         <p>n.bolloev@mail.ru</p>
                     </ContactBarText>
-                    <ContactBar bgColor={colors.buttons.telegram} onClick={() => handleClick("mailto:n.bolloev@mail.ru?subject=Совместная работа")}>
-                        <ContactIcon src={mail}/>
-                    </ContactBar>
+                    <ContactBarItem 
+                        url='mailto:n.bolloev@mail.ru?subject=Совместная работа' 
+                        icon={mail}
+                        bgColor={colors.buttons.telegram} 
+                        hoveredColor={colors.buttons.hovered.telegram} 
+                    />
                 </ContactBarWrap>
                 <ContactBarWrap>
                     <ContactBarText colors={colors}>
                         <p>+7(909)-487-93-33</p>
                     </ContactBarText>
-                <ContactBar bgColor={colors.buttons.vk}>
-                    <ContactIcon src={phone}/>
-                </ContactBar>
+                    <ContactBarItem 
+                        url='tel:+79094879333' 
+                        icon={phone}
+                        bgColor={colors.buttons.vk} 
+                        hoveredColor={colors.buttons.hovered.vk} 
+                    />
                 </ContactBarWrap>
-                
             </ModalContainer>
         </ModalBackground>
     );

@@ -1,5 +1,4 @@
 {
-    "text": "авй",
     "AboutMe": {
         "titles": {
             "name": "имя",
@@ -38,8 +37,8 @@
     },
     "Skills": {
         "titles": {
-            "main": "Навыки",
-            "design": "Дизайн",
+            "main": "Инструменты",
+            "other": "Другое",
             "front": "Frontend",
             "back": "Backend"
         }

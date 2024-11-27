@@ -26,10 +26,8 @@ export const fadeOut = keyframes`
 
 const ModalBackground = styled.div`
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5); 
     backdrop-filter: blur(5px); 
     display: flex;
@@ -37,13 +35,13 @@ const ModalBackground = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 100; 
+    @media(max-width: 475px){
+        justify-content: center;
+    }
 `;
 
 const ModalInstruction = styled.p<{colors: Colors}>`
-    @media(min-width: 475px){
-        display: none;
-    }
-    display: block;
+    display: none;
     color: ${({colors}) => colors.text.gray}
     
 `
@@ -59,8 +57,12 @@ const ModalContainer = styled.div<{ isOpen: boolean, colors: Colors }>`
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    border: 1px solid white;
+    
     animation: ${(props) => (props.isOpen ? fadeIn : fadeOut)} 1s;
+    @media(max-width: 475px){
+        width: 97vw; 
+        border-radius: .2rem; 
+    }
 `;
 
 const ContactBarWrap = styled.div`
@@ -75,9 +77,9 @@ const ContactBarWrap = styled.div`
         border: none;
     }
 `
-const ContactBar = styled.div<{bgColor: string}>`
+const ContactBar = styled.div<{ bgColor: string, isClicked: boolean, hoveredColor: string}>`
     position: absolute;
-    bottom,: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%; 
@@ -85,13 +87,18 @@ const ContactBar = styled.div<{bgColor: string}>`
     justify-content: center;
     align-items: center;
     background: ${({bgColor}) => bgColor};
-    transition: transform 1s ease;
-    transition: justify-content .5 ease;
-    ${ContactBarWrap}:hover &{
+    transition: transform 1s ease, justify-content 1s ease, background 0.5s ease;
+    ${({isClicked}) => isClicked ? 
+        `
         padding-left: 1.4rem;
         transform: translateX(80%);
-        justify-content: start; 
+        justify-content: start;
+        margin-left: -1.7rem;` 
+        : ``}
+    &:hover{
+        background: ${({hoveredColor}) => hoveredColor}
     }
+
     cursor: pointer;
     
 
@@ -112,12 +119,19 @@ const ContactBarText = styled.div<{colors: Colors}>`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media(max-width: 475px){
+        padding: .5rem .5rem;
+    }
 `
 
 
 
 const ContactIcon = styled.img`
     height: 80%;
+    @media(max-width: 475px){
+        height: 60%;
+        
+    }
     
 `
 

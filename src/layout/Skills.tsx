@@ -14,6 +14,7 @@ import node from '../assets/Skills/icons/backend/node.png'
 import docker from '../assets/Skills/icons/backend/docker.png'
 import postgres from '../assets/Skills/icons/backend/postgresql.png'
 import express from '../assets/Skills/icons/backend/Express JS.png'
+import git from '../assets/Skills/icons/design/Git.png'
 import Skill from '../components/Skills/Skill'
 import { useTranslation } from 'react-i18next'
 
@@ -26,13 +27,13 @@ const Skills = () => {
     techUrl: [react, js, ts, redux, tailwindCSS, styledComponents, antd],
     techNames: ['React', 'JavaScript', 'TypeScript', 'Redux', 'Tailwind CSS', 'styled-components', 'Ant Design']
   }
-  const designList = {
-    techUrl: [ps, figma],
-    techNames: ['Photoshop', 'Figma']
+  const otherList = {
+    techUrl: [ps, figma, docker, git],
+    techNames: ['Photoshop', 'Figma',  'Docker', 'Git']
   }
   const backendList = {
-    techUrl: [node, express, docker, postgres],
-    techNames: ['Node.js', 'Express JS', 'Docker', 'Postgresql']
+    techUrl: [node, express, postgres],
+    techNames: ['Node.js', 'Express JS', 'Postgresql']
   }
 
   return (
@@ -40,8 +41,8 @@ const Skills = () => {
       <Title>{t('Skills.titles.main')}</Title>
       <SkillsContainer>
         <Skill title={t('Skills.titles.front')} techList={frontendList.techUrl} techNames={frontendList.techNames}/>
-        <Skill title={t('Skills.titles.design')} techList={designList.techUrl} techNames={designList.techNames}/>
         <Skill title={t('Skills.titles.back')} techList={backendList.techUrl} techNames={backendList.techNames}/>
+        <Skill title={t('Skills.titles.other')} techList={otherList.techUrl} techNames={otherList.techNames}/>
       </SkillsContainer>
     </Container>
   )

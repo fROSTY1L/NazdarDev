@@ -37,8 +37,8 @@
     },
     "Skills": {
         "titles": {
-            "main": "Skills",
-            "design": "Design",
+            "main": "Tools",
+            "other": "Other",
             "front": "Frontend",
             "back": "Backend"
         }  
