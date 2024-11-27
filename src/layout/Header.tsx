@@ -40,7 +40,6 @@ const Header = () => {
     <Container >
       <Button text={t('Header.buttons.home')} isActive={activeButton === 'home'} section='home'/>
       <Button text={t('Header.buttons.skills')} isActive={activeButton === 'skills'} section='skills'/>
-      <Button text={t('Header.buttons.about')} isActive={activeButton === 'about'} section='about'/>
       <Button text={t('Header.buttons.projects')} isActive={activeButton === 'projects'} section='projects'/>
       <DropDownSettings />
     </Container>

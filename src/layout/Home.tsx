@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 import Button from "../components/Home/Button"
 import MoreInfo from "../components/Home/MoreInfo"
-import { ContentWrap, MoreInfoWrap, Name, Title, TitleWrap } from "../styles/Home/Content.style"
+import { ContentWrap, MoreInfoWrap, Name, Title, TitleText, TitleWrap } from "../styles/Home/Content.style"
 import { ButtonsContainer, Wrap } from "../styles/Home/Home.style"
 import image from './../assets/Home/Background.png'
 import { useColors } from "../variables/Colors"
@@ -15,12 +15,14 @@ const Home = () => {
     <Wrap url={image} id="home">
       <ContentWrap>
         <TitleWrap colors={colors}>
-          <Name>
-            {t('Home.title.name')}
-          </Name>
-          <Title>
-          {t('Home.title.specialty')}
-          </Title>
+          <TitleText>
+            <Name>
+              {t('Home.title.name')}
+            </Name>
+            <Title>
+            {t('Home.title.specialty')}
+            </Title>
+          </TitleText>
           <ButtonsContainer>
             <Button text={t('Home.button')} theme="dark"/>
             <LetsWorkButton text={t('AboutMe.mainButton')}/>

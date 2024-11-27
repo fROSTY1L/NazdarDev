@@ -109,7 +109,7 @@ const MainButton = styled.div`
   text-align: center;
   border-radius: .5rem;
   padding: 1rem;
-  width: 95%;
+  width: 100%;
   cursor: pointer;
   ${gradientAnimation}
   transition: transform 0.3s ease, background-color 0.3s ease; 
@@ -124,9 +124,7 @@ const MainButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media(max-width: 475px) {
-        width: 13.8rem; 
-    }
+  
 
 `
 

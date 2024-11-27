@@ -127,9 +127,9 @@ const ContactBarText = styled.div<{colors: Colors}>`
 
 
 const ContactIcon = styled.img<{isClicked: boolean}>`
-    height: 80%;
+    height: 60%;
     @media(max-width: 475px){
-        height: 60%;
+        height: 40%;
         ${({isClicked}) => isClicked ?
         `margin-left: -.5rem`
         : ``

@@ -7,13 +7,16 @@ const ContentWrap = styled.div`
     height: calc(100vh - 4rem);
     padding-left: 4rem;
     padding-top: 10rem;
-    justify-content: space-between;
     @media(max-width: 740px){
         padding: 0rem;
+        
     }
-    
+    justify-content: space-between;
     ${nonSelectable};
     
+`
+const TitleText = styled.div`
+
 `
 
 const TitleWrap = styled.div<{colors: Colors}>`
@@ -21,6 +24,11 @@ const TitleWrap = styled.div<{colors: Colors}>`
     flex-direction: column;
     height: 100%;
     justify-content: center;
+    @media(max-width: 475px){
+        padding-top: 2rem;
+        justify-content: space-between;
+        gap: 1rem;
+    }
     color: ${({colors}) => colors.text.main}
 `
 
@@ -42,8 +50,9 @@ const Title = styled.p`
     margin-bottom: 2rem;
     @media(max-width: 740px){
         font-size: 4rem;
+        margin-bottom: 0;
     }
 `
 
 
-export { ContentWrap, TitleWrap, Name, Title, MoreInfoWrap }
+export { ContentWrap, TitleWrap, Name, Title, TitleText, MoreInfoWrap }

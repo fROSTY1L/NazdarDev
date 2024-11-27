@@ -11,12 +11,9 @@ const LetsWorkButton = (props: ButtonProps) => {
   const dispatch = useDispatch()
 
   return (
-    <>
       <MainButton onClick={() => dispatch(setModalState(true))}>
         {props.text}
-      </MainButton>
-      
-    </>
+      </MainButton> 
   )
 }
 

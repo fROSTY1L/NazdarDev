@@ -24,7 +24,7 @@ const LeftMenu = styled.div`
 
 const GlobalWrap = styled.div<{isBlur: boolean}>`
   ${({isBlur}) => isBlur ? `filter: blur(5px);` : ``}
-  width: 100%;
+  width: 98vw;
   display: grid;
 `
 

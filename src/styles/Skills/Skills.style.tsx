@@ -66,7 +66,7 @@ const Container = styled.section<{colors: Colors, url: string}>`
     }
 `;
 const Title = styled.div`
-    font-size: 5rem;
+    font-size: 4rem;
     padding-bottom: 2rem;
     @media(max-width: 475px) {
         font-size: 3rem;
@@ -106,6 +106,7 @@ const Description = styled.div`
 
 const Divider = styled.hr<{colors: Colors}>`
   color: ${({colors}) => colors.text.main};
+  margin: 0 1.4rem;
 `
 
 const TechList = styled.div`
