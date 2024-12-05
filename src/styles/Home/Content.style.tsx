@@ -34,7 +34,7 @@ const TitleWrap = styled.div<{colors: Colors}>`
 const MoreInfoWrap = styled.div`
     display: flex;
     align-items: end;
-    margin: 3rem; 
+     
 `
 
 const Name = styled.p`

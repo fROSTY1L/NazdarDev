@@ -25,7 +25,6 @@ const Wrap = styled.section<{url: string}>`
     height: 100vh;
     position: relative;
     z-index: 4;
-    padding-left: 2rem;
     &::before {
         z-index: -20;
         content: '';
@@ -45,8 +44,8 @@ const Wrap = styled.section<{url: string}>`
     }
      @media(max-width: 475px){
         font-size: 1rem;
-        padding-left: 2rem;
-        width: 100vw; 
+        
+         
     }
 `;
 
@@ -66,7 +65,7 @@ const ButtonsContainer = styled.div`
         padding-bottom: 5rem;
         justify-content: space-between;
         height: 100%;
-        width: calc(100vw - 4rem);
+        
     }
 `;
 
