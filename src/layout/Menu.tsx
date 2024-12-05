@@ -30,7 +30,7 @@ const Menu = () => {
   return (
     <Wrap colors={colors} isOpen={isOpen}>
       <Half>
-        <SectionWrap>
+        <SectionWrap isOpen={isOpen}>
           <ButtonWrap isMoreInfo={false} isInfo={true} onClick={() => selected == 1 ? dispatch(setMenuSelectedState(0)) : dispatch(setMenuSelectedState(1))} colors={colors}>
             <InfoIcon src={info}/>
           </ButtonWrap>
@@ -44,7 +44,7 @@ const Menu = () => {
               </MoreInfoWrap>
               </InfoPart>
           </SectionWrap>
-          <SectionWrap>
+          <SectionWrap isOpen={isOpen}>
               
           </SectionWrap>
         </Half>

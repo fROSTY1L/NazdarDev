@@ -1,21 +1,17 @@
 import styled from "styled-components";
 import { Colors } from "../variables/Colors";
 
-const Content = styled.div<{colors: Colors, isOpen: boolean}>`
+const Content = styled.div<{colors: Colors}>`
   position: relative;
   height: 100%;
   display: flex;
+  padding-left: 2.5rem;
   flex-direction: column;
-  border: 1px solid white;
-  @media(min-width: 1300px) {
-    padding-left: 4rem;
-    ${({isOpen}) => isOpen && `padding-left: 18rem;`}
-  }
   @media(max-width: 475px) {
     margin-top: 5rem;
     width: 100vw;
   }
-  z-index: 30;
+  z-index: 10;
   
 `
 

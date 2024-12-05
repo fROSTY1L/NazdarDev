@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import Header from "./layout/Header"
 import Home from "./layout/Home"
 import Skills from "./layout/Skills"
-import { GlobalWrap } from "./styles/App.style"
+import { Content, GlobalWrap } from "./styles/App.style"
 import { GlobalStyle } from "./styles/GlobalStyle"
 import { useColors } from "./variables/Colors"
 import { RootState } from "./store"
@@ -18,9 +18,11 @@ function App() {
         {isOpenModal && <Modal/>}
         <GlobalWrap isBlur={isOpenModal}>
           <Menu/>
-          <Header/>
-          <Home/>
-          <Skills/>
+          <Content colors={colors}>
+            <Header/>
+            <Home/>
+            <Skills/>
+          </Content>
       </GlobalWrap>
     </>
   )

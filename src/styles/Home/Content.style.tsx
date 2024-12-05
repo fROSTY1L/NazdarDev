@@ -5,11 +5,10 @@ import { nonSelectable } from "../NonSelectable";
 const ContentWrap = styled.div`
     display: flex;
     height: calc(100vh - 4rem);
-    padding-left: 4rem;
+    
     padding-top: 10rem;
     @media(max-width: 740px){
-        padding: 0rem;
-        
+
     }
     justify-content: space-between;
     ${nonSelectable}

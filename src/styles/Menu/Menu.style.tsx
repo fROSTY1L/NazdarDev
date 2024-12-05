@@ -7,6 +7,8 @@ const Wrap = styled.div<{colors: Colors, isOpen: boolean}>`
     ${({isOpen}) => isOpen ? `width: 15rem;` : `width: 3.5em;`}
     height: 100vh;
     position: fixed;
+    top: 0;
+    left: 0;
     padding: .5rem;
     background: ${({colors}) => colors.menu};
     color: ${({colors}) => colors.text.main};
@@ -18,9 +20,9 @@ const Wrap = styled.div<{colors: Colors, isOpen: boolean}>`
     justify-content: space-between;
     align-items: center;
     @media(max-width: 475px){
-        width: 80vw;
+        ${({isOpen}) => isOpen ? `width: 90vw;` : `width: 3rem`}
     }
-        
+    z-index: 11;    
 `
 
 const OpenIcon = styled.img<{isOpen: boolean}>`
@@ -52,6 +54,7 @@ const MoreInfoWrap = styled.div<{colors: Colors}>`
     background: ${({colors}) => colors.menu};
     height: 2rem;
     ${nonSelectable}
+    
     cursor: pointer;
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 `
@@ -87,12 +90,14 @@ const InfoPart = styled.div<{isOpen: boolean, colors: Colors}>`
     z-index: 5;
 `
 
-const SectionWrap = styled.div`
+const SectionWrap = styled.div<{isOpen: boolean}>`
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    ${({isOpen}) => !isOpen && `height: 2.3rem`}
 `
 
 const InfoString = styled.div`
@@ -122,6 +127,7 @@ const Half = styled.div`
     flex-direction: column;
     align-items: center;
     gap: .5rem;
+    overflow-y: auto;
 `
 
 export { Wrap, OpenIcon, ButtonWrap, InfoIcon, InfoIconWrap, InfoPart, InfoString, InfoStringTitle, InfoStringText, Half, SectionWrap, Contacts, MoreInfoWrap }
