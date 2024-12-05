@@ -57,8 +57,9 @@ const Container = styled.section<{colors: Colors, url: string}>`
         left: 0;
         right: 0;
         bottom: 0;
+        height: 100vh;
         background-image: url(${({url}) => url});
-        background-size: cover; 
+        background-size: 100%; 
         background-repeat: no-repeat;
         opacity: 0;
         animation: ${fadeInFromTop} 5s ease forwards, ${shake} 5s ease-in-out infinite; 

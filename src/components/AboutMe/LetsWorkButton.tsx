@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux"
-import { MainButton } from "../../styles/AboutMe.style"
+
 import { setModalState } from "../../store/modalReducer"
+import { MainButton } from "../../styles/Home/LetsWorkButton.style"
 
 interface ButtonProps {
   text: string

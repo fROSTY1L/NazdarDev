@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const fadeInFromTop = keyframes`
     0% {
-        background-position: top;
+        background-position: bottom;
         opacity: 0;
     }
     100% {
@@ -23,10 +23,9 @@ const shake = keyframes`
 const Wrap = styled.section<{url: string}>`
     color: white;
     height: 100vh;
-    overflow: hidden; 
     position: relative;
-    z-index: -20;
-    
+    z-index: 4;
+    padding-left: 2rem;
     &::before {
         z-index: -20;
         content: '';
@@ -36,7 +35,7 @@ const Wrap = styled.section<{url: string}>`
         right: 0;
         bottom: 15rem;
         background-image: url(${({url}) => url});
-        background-size: cover;
+        background-size: 100%;
         background-repeat: no-repeat;
         opacity: 0;
         animation: ${fadeInFromTop} 5s ease forwards, ${shake} 5s ease-in-out infinite; 

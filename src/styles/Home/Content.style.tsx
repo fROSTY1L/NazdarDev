@@ -12,7 +12,7 @@ const ContentWrap = styled.div`
         
     }
     justify-content: space-between;
-    ${nonSelectable};
+    ${nonSelectable}
     
 `
 const TitleText = styled.div`

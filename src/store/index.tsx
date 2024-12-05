@@ -3,6 +3,8 @@ import modalReducer from "./modalReducer";
 import themeReducer from "./themeReducer";
 import skillReducer from "./skillReducer";
 import activeButtonReducer from "./activeButtonReducer";
+import leftMenuReducer from "./leftMenuReducer";
+import menuSelectedReducer from "./menuSelectedReducer";
 
 const loadState = () => {
   try {
@@ -31,7 +33,9 @@ export const store = configureStore({
     modal: modalReducer,
     theme: themeReducer,
     skill: skillReducer,
-    activeButton: activeButtonReducer
+    activeButton: activeButtonReducer,
+    menu: leftMenuReducer,
+    menuSelected: menuSelectedReducer
   },
 });
 
