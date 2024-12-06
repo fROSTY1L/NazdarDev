@@ -16,10 +16,11 @@ const Content = styled.div<{colors: Colors}>`
 
 const GlobalWrap = styled.div<{isBlur: boolean}>`
   ${({isBlur}) => isBlur ? `filter: blur(5px);` : ``}
-  padding-left: 2.5rem;
+  
+  
   @media(max-width: 475px) {
     
-    width: 100vw;
+    width: 99vw;
     
   }
 `

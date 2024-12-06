@@ -47,7 +47,7 @@ const Container = styled.section<{colors: Colors, url: string}>`
         display: block;
     }
     @media(max-width: 475px) {
-        padding: 1rem;
+        padding-left: 4rem;
     }
 
     &::before {

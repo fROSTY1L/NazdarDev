@@ -5,7 +5,7 @@ import { nonSelectable } from "../NonSelectable";
 const ContentWrap = styled.div`
     display: flex;
     height: calc(100vh - 4rem);
-    
+    padding-left: 4rem;
     padding-top: 10rem;
     @media(max-width: 740px){
 
@@ -27,6 +27,7 @@ const TitleWrap = styled.div<{colors: Colors}>`
         padding-top: 2rem;
         justify-content: space-between;
         gap: 1rem;
+
     }
     color: ${({colors}) => colors.text.main}
 `
@@ -50,6 +51,10 @@ const Title = styled.p`
     @media(max-width: 740px){
         font-size: 4rem;
         margin-bottom: 0;
+    }
+    @media(max-width: 475px){
+        font-size: 2rem;
+        
     }
 `
 

@@ -15,6 +15,7 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   cursor: pointer;
+  padding-right: 2rem;
   @media(max-width: 1100px) {
     display: none;
   }
@@ -26,16 +27,18 @@ const RoundText = styled.img`
   border-radius: 50%; 
   animation: ${rotate} 10s linear infinite; 
   object-fit: cover; 
+  
 `;
 
 const Icon = styled.img`
   position: absolute; 
   top: 50%;
-  left: 50%;
+  left: 4.5rem;
   transform: translate(-50%, -50%);
   width: 4rem; 
   height: 4rem;
   z-index: 1; 
+  
 `;
 
 export { Container, RoundText, Icon };
