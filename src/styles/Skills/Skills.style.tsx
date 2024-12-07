@@ -70,7 +70,7 @@ const Title = styled.div`
     font-size: 4rem;
     padding-bottom: 2rem;
     @media(max-width: 475px) {
-        font-size: 3rem;
+        font-size: 2.3rem;
         padding-bottom: .5rem;
     }
 `

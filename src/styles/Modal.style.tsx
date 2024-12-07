@@ -62,7 +62,8 @@ const ModalContainer = styled.div<{ isOpen: boolean, colors: Colors , isMoreInfo
     ${({isMoreInfo}) => isMoreInfo && `width: 70vw; height: 50vh;`}
     animation: ${(props) => (props.isOpen ? fadeIn : fadeOut)} 1s;
     @media(max-width: 475px){
-        width: 97vw; 
+        width: 97vw;
+        height: 70vh; 
         border-radius: .2rem; 
     }
     
