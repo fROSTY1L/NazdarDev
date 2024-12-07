@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit"
 
 interface ModalState {
     isOpen: boolean;
+    isMoreInfo: boolean;
 }
 
 const initialState: ModalState = {
-    isOpen: false
+    isOpen: false,
+    isMoreInfo: false
 }
 
 const modalSlice = createSlice({
@@ -13,10 +15,14 @@ const modalSlice = createSlice({
     initialState,
     reducers: {
         setModalState: (state, action) => {
-            state.isOpen = action.payload
+            state.isOpen = action.payload;
+            
         },
+        setMoreInfo: (state, action) => {
+            state.isMoreInfo = action.payload
+        }
     },
 })
 
-export const { setModalState } = modalSlice.actions;
+export const { setModalState, setMoreInfo } = modalSlice.actions;
 export default modalSlice.reducer

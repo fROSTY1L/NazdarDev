@@ -9,6 +9,7 @@ import info from '../assets/AboutMe/buttons/info.png'
 import { useTranslation } from "react-i18next"
 import InfoPartString from "../components/AboutMe/InfoPartString"
 import { setMenuSelectedState } from "../store/menuSelectedReducer"
+import { setMoreInfo } from "../store/modalReducer"
 
 
 const Menu = () => {
@@ -31,7 +32,7 @@ const Menu = () => {
     <Wrap colors={colors} isOpen={isOpen}>
       <Half>
         <SectionWrap isOpen={isOpen}>
-          <ButtonWrap isMoreInfo={false} isInfo={true} onClick={() => selected == 1 ? dispatch(setMenuSelectedState(0)) : dispatch(setMenuSelectedState(1))} colors={colors}>
+          <ButtonWrap isOpen={isOpen} isMoreInfo={false} isInfo={true} onClick={() => selected == 1 ? dispatch(setMenuSelectedState(0)) : dispatch(setMenuSelectedState(1))} colors={colors}>
             <InfoIcon src={info}/>
           </ButtonWrap>
             <InfoPart isOpen={isOpen} colors={colors}>
@@ -39,7 +40,7 @@ const Menu = () => {
               <InfoPartString title={t('AboutMe.titles.specialty')} text={t('AboutMe.content.specialty')}/>
               <InfoPartString title={t('AboutMe.titles.liveIn')} text={t('AboutMe.content.liveIn')}/>
               <InfoPartString title={t('AboutMe.titles.dateOfBirth')} text={t('AboutMe.content.dateOfBirth')}/>
-              <MoreInfoWrap colors={colors}>
+              <MoreInfoWrap onClick={() => dispatch(setMoreInfo(true))} colors={colors}>
                 More info
               </MoreInfoWrap>
               </InfoPart>
@@ -49,7 +50,7 @@ const Menu = () => {
           </SectionWrap>
         </Half>
         <Half>
-          <ButtonWrap isMoreInfo={false} isInfo={false} colors={colors} onClick={handleClick}>
+          <ButtonWrap isOpen={isOpen} isMoreInfo={false} isInfo={false} colors={colors} onClick={handleClick}>
             <OpenIcon isOpen={isOpen} src={openIcon}/>
           </ButtonWrap>
       </Half>

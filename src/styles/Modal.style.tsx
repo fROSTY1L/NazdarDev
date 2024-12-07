@@ -28,16 +28,17 @@ const ModalBackground = styled.div`
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5) ; 
     backdrop-filter: blur(5px); 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 100; 
+    z-index: 9; 
     @media(max-width: 475px){
         justify-content: center;
     }
+
 `;
 
 const ModalInstruction = styled.p<{colors: Colors}>`
@@ -46,7 +47,7 @@ const ModalInstruction = styled.p<{colors: Colors}>`
     
 `
 
-const ModalContainer = styled.div<{ isOpen: boolean, colors: Colors }>`
+const ModalContainer = styled.div<{ isOpen: boolean, colors: Colors , isMoreInfo: boolean}>`
     width: 40rem;
     height: 25rem;
     background: ${({colors}) => colors.bg}; 
@@ -57,12 +58,14 @@ const ModalContainer = styled.div<{ isOpen: boolean, colors: Colors }>`
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    
+    z-index: 10;
+    ${({isMoreInfo}) => isMoreInfo && `width: 70vw; height: 50vh;`}
     animation: ${(props) => (props.isOpen ? fadeIn : fadeOut)} 1s;
     @media(max-width: 475px){
         width: 97vw; 
         border-radius: .2rem; 
     }
+    
 `;
 
 const ContactBarWrap = styled.div`
@@ -137,5 +140,48 @@ const ContactIcon = styled.img<{isClicked: boolean}>`
     
 `
 
+const MoreContainer = styled.div<{colors: Colors}>`
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 2rem;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
 
-export { ModalBackground, ModalContainer, ContactBar, ContactBarWrap, ContactIcon, ContactBarText, ModalInstruction }
+    &::-webkit-scrollbar-track {
+        background: ${({ colors }) => colors.bg}; 
+        border-radius: 10px; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: ${({ colors }) => colors.text.gray}; 
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: ${({ colors }) => colors.text.main};
+    }
+`
+
+const Title = styled.p`
+
+`
+
+const Text = styled.p`
+    font-size: 1.5rem;
+`
+
+const Paragraph = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 1.3rem;
+`
+
+export { ModalBackground, ModalContainer, ContactBar, ContactBarWrap, ContactIcon, ContactBarText, ModalInstruction, MoreContainer, Title, Text, Paragraph }

@@ -20,7 +20,7 @@
             "home": "Home",
             "skills": "Skills",
             "about": "About Me",
-            "projects": "Projects"
+            "projects": "Experience"
         },
         "settings": {
             "translate": "Switch language to",
@@ -46,6 +46,37 @@
     "Modal": {
         "title": "Contacts",
         "instruction": "hold for full information"
+    },
+    "MoreInfo": {
+        "titles": {
+        "aboutMe": "About Me",
+        "command": "Team Projects",
+        "skills": "Technical Skills",
+        "backend": "Backend Knowledge",
+        "mobile": "Mobile Applications",
+        "end": "Conclusion"
+        },
+        "content": {
+        "aboutMe": "I am a web developer with more than two years of experience with React who strives to create intuitive and highly functional interfaces. I am currently in my third year of study at L.N. Tolstoy TSPU, specializing in Software Developer. My passion for development is evident in every project I participate in, and I always strive for perfection in my work.",
+        "command": "I have actively participated in several team projects where I worked closely with designers and other developers. This has not only improved my teamwork skills but also developed my ability to communicate effectively and find optimal solutions to achieve common goals.",
+        "skills": "My React development experience includes using modern libraries such as Ant Design and Tailwind CSS, which significantly speed up the layout process and improve the quality of the user interface. I also actively use Redux Toolkit to manage application state, making it easier to develop complex interfaces and enhance their performance. I can create responsive and cross-browser applications that provide an impeccable user experience.",
+        "backend": "In addition to frontend development, I possess basic knowledge in backend development with Node.js. This allows me to better understand application architecture and client-server interaction, making me a more versatile developer.",
+        "mobile": "I also have practical experience developing mobile applications with React Native. This expands my capabilities and enables me to create cross-platform solutions that meet modern user requirements.",
+        "end": "I am always open to new challenges and ready to collaborate on interesting projects. My goal is to create high-quality and innovative products that will benefit users and inspire the team."
+        }
+    },
+    "Projects": {
+        "mainTitle": "Experience",
+        "titles": {
+            "commerce": "Commercial development",
+            "openCode": "Experience"
+        },
+        "content": {
+            "commerce": "As part of my responsibilities on commercial projects, I have been involved in developing and maintaining the frontend portion of applications. In my work, I used various technologies, including the React library to create interactive user interfaces, and used pure HTML and CSS for page styling and markup. In addition, I integrated these frontend solutions with a server side written in the Python programming language, which allowed me to communicate effectively between the client and server sides of the applications.",
+            "openCode": "My GitHub account has started to fill up with new projects, and those projects now include this site."
+        }
+
     }
+
 
 }

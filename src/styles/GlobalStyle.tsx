@@ -8,6 +8,8 @@ export const GlobalStyle = createGlobalStyle<{colors: Colors}>`
     box-sizing: border-box;
     font-family: "Syne", sans-serif;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    color: ${({ colors }) => colors.text.main}
 }
 
 body{

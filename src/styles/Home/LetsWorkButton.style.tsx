@@ -37,5 +37,9 @@ export const MainButton = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 5;
+  @media(max-width: 475px){
+    width: 20rem;
+    
+  }
 `
 

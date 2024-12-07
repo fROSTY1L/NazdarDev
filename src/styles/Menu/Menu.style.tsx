@@ -4,7 +4,7 @@ import { nonSelectable } from "../NonSelectable";
 
 
 const Wrap = styled.div<{colors: Colors, isOpen: boolean}>`
-    ${({isOpen}) => isOpen ? `width: 15rem;` : `width: 3.5em;`}
+    ${({isOpen}) => isOpen ? `width: 15rem;` : `width: 3.5em; `}
     height: 100vh;
     position: fixed;
     top: 0;
@@ -13,24 +13,23 @@ const Wrap = styled.div<{colors: Colors, isOpen: boolean}>`
     background: ${({colors}) => colors.menu};
     color: ${({colors}) => colors.text.main};
     transition: width .3s ease;
-    z-index: 5;
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     @media(max-width: 475px){
-        ${({isOpen}) => isOpen ? `width: 90vw;` : `width: 3rem`}
+        ${({isOpen}) => isOpen ? `width: 90vw;` : `width: 2.5rem; padding: .6rem`}
     }
-    z-index: 11;    
+    z-index: 6;    
 `
 
 const OpenIcon = styled.img<{isOpen: boolean}>`
-    width: 1.6rem;
+    width: 1.5rem;
     ${({isOpen}) => !isOpen && ' transform: rotate(180deg);'};
 `
 
-const ButtonWrap = styled.div<{colors: Colors, isInfo: boolean, isMoreInfo: boolean}>`
+const ButtonWrap = styled.div<{colors: Colors, isInfo: boolean, isMoreInfo: boolean, isOpen: boolean}>`
     position: relative;
     ${({isInfo}) => isInfo && `padding-top: .5rem;`}
     display: flex;
@@ -38,13 +37,13 @@ const ButtonWrap = styled.div<{colors: Colors, isInfo: boolean, isMoreInfo: bool
     justify-content: center;
     width: 100%;
     height: 2rem;
-    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-    background: ${({colors}) => colors.bg};
+     ${({isOpen,colors}) => isOpen ? `background: ${colors.bg};` : `background: ${colors.menu};`}
     border-radius: 2rem
     z-index: 7;
     overflow: hidden;
     ${nonSelectable}
     cursor: pointer;
+    
 `
 
 const MoreInfoWrap = styled.div<{colors: Colors}>`
@@ -54,13 +53,14 @@ const MoreInfoWrap = styled.div<{colors: Colors}>`
     background: ${({colors}) => colors.menu};
     height: 2rem;
     ${nonSelectable}
-    
-    cursor: pointer;
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    cursor: pointer;
+    
 `
 
 const InfoIcon = styled.img`
-    width: 2rem;
+    
+    width: 1.5rem;
 `
 
 const InfoIconWrap = styled.div<{isOpen: boolean}>`
@@ -79,15 +79,14 @@ const InfoPart = styled.div<{isOpen: boolean, colors: Colors}>`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-height: 20rem;
     overflow: hidden;
-    box-shadow: 0px 10px 10px 2px rgba(34, 60, 80, 0.2);
     transition: max-height 0.5s ease-out;
     ${({isOpen}) => !isOpen && `
-        max-height: 0;
+        display: none;
     `}
-    padding-bottom: .5rem;
+    padding-bottom: 1rem;
     z-index: 5;
+    
 `
 
 const SectionWrap = styled.div<{isOpen: boolean}>`

@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const fadeInFromTop = keyframes`
+export const fadeInFromTop = keyframes`
     0% {
         background-position: bottom;
         opacity: 0;
@@ -11,7 +11,7 @@ const fadeInFromTop = keyframes`
     }
 `;
 
-const shake = keyframes`
+export const shake = keyframes`
     0%, 100% {
         transform: translateY(0);
     }

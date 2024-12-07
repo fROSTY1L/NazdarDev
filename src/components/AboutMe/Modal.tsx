@@ -24,7 +24,7 @@ const Modal: React.FC = () => {
     return (
         <ModalBackground onClick={() => dispatch(setModalState(false))}>
             <ModalInstruction colors={colors}>{t('Modal.instruction')}</ModalInstruction>
-            <ModalContainer colors={colors} isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
+            <ModalContainer isMoreInfo={false} colors={colors} isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
                 <ContactBarWrap>
                     <ContactBarText colors={colors}>
                         <p>https://t.me/nazdarq</p> 

@@ -35,7 +35,7 @@ const shake = keyframes`
 `;
 
 const Container = styled.section<{colors: Colors, url: string}>`
-    height: 100vh;
+    min-height: 100vh;
     padding-right: 5rem;
     position: relative; 
     color: ${({colors}) => colors.text.main};
