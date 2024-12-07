@@ -17,7 +17,6 @@ const Projects = () => {
       <Content>
         <Project colors={colors} isPicLeft={true} picUrl={secondProjectPic} title={t('Projects.titles.commerce')} text={t('Projects.content.commerce')}/>
         <Project colors={colors} isPicLeft={false} picUrl={firstProjectPic} title={t('Projects.titles.openCode')} text={t('Projects.content.openCode')}/>
-        
       </Content>
       </Wrap>
   )

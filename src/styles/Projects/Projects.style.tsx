@@ -39,8 +39,9 @@ const Title = styled.p`
     font-size: 4rem;
     padding-bottom: 2rem;
     @media(max-width: 475px) {
-        font-size: 3rem;
+        font-size: 2.5rem;
         padding-bottom: .5rem;
+        padding-left: 3.5rem;
     }
 `
 
