@@ -88,7 +88,7 @@ const ProjectText = styled.div`
     width: 50%;
     @media(max-width: 1200px){
         width: 100%;
-        padding: 1rem;
+        
     }
     
 `
@@ -96,7 +96,7 @@ const ProjectText = styled.div`
 const ProjectTitle = styled.div`
     font-size: 3rem;
     @media(max-width: 1200px){
-        font-size: 3rem;
+        font-size: 2.3rem;
         text-align: center;
     }
     
@@ -105,6 +105,10 @@ const ProjectTitle = styled.div`
 const ProjectContent = styled.div`
     font-size: 1.5rem;
     padding-top: 3rem;
+    @media(max-width: 1200px){
+        font-size: 1.1rem;
+        text-align: center;
+    }
     
 `
 
