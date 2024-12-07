@@ -10,6 +10,7 @@ const Container = styled.div<{colors: Colors}>`
     width: fit-content;
     padding: .3rem .7rem;
     border-radius: 1rem;
+    cursor: pointer;
     background: ${({colors}) => colors.menu};
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     border: 1px solid ${({colors}) => colors.text.main};

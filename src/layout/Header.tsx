@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next"
 import Button from "../components/Header/Button"
-import DropDownSettings from "../components/Header/DropDownSettings/DropDownSettings"
 import { Container } from "../styles/Header/Header.style"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -41,7 +40,6 @@ const Header = () => {
       <Button text={t('Header.buttons.home')} isActive={activeButton === 'home'} section='home'/>
       <Button text={t('Header.buttons.skills')} isActive={activeButton === 'skills'} section='skills'/>
       <Button text={t('Header.buttons.projects')} isActive={activeButton === 'projects'} section='projects'/>
-      <DropDownSettings />
     </Container>
     </>
   )

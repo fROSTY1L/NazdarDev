@@ -14,7 +14,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  cursor: pointer;
   padding-right: 2rem;
   @media(max-width: 1100px) {
     display: none;

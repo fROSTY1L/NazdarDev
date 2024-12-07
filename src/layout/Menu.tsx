@@ -6,10 +6,13 @@ import lightMenu from '../assets/AboutMe/buttons/menu-light.png'
 import darkMenu from '../assets/AboutMe/buttons/menu-dark.png'
 import { setMenuState } from "../store/leftMenuReducer"
 import info from '../assets/AboutMe/buttons/info.png'
+import settings from '../assets/Header/drop down settings/settings.png'
 import { useTranslation } from "react-i18next"
 import InfoPartString from "../components/AboutMe/InfoPartString"
 import { setMenuSelectedState } from "../store/menuSelectedReducer"
 import { setMoreInfo } from "../store/modalReducer"
+import Translate from "../components/Header/Translate"
+import ThemeToggle from "../components/Header/ThemeToggle"
 
 
 const Menu = () => {
@@ -45,11 +48,18 @@ const Menu = () => {
               </MoreInfoWrap>
               </InfoPart>
           </SectionWrap>
-          <SectionWrap isOpen={isOpen}>
-              
-          </SectionWrap>
+          
         </Half>
         <Half>
+        <SectionWrap isOpen={isOpen}>
+          <ButtonWrap isOpen={isOpen} isMoreInfo={false} isInfo={true} onClick={() => selected == 1 ? dispatch(setMenuSelectedState(0)) : dispatch(setMenuSelectedState(1))} colors={colors}>
+            <InfoIcon src={settings}/>
+          </ButtonWrap>
+            <InfoPart isOpen={isOpen} colors={colors}>
+              <Translate/>
+              <ThemeToggle/>
+              </InfoPart>
+          </SectionWrap>
           <ButtonWrap isOpen={isOpen} isMoreInfo={false} isInfo={false} colors={colors} onClick={handleClick}>
             <OpenIcon isOpen={isOpen} src={openIcon}/>
           </ButtonWrap>

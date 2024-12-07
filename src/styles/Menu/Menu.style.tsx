@@ -26,6 +26,7 @@ const Wrap = styled.div<{colors: Colors, isOpen: boolean}>`
 
 const OpenIcon = styled.img<{isOpen: boolean}>`
     width: 1.5rem;
+    cursor: pointer;
     ${({isOpen}) => !isOpen && ' transform: rotate(180deg);'};
 `
 
@@ -42,7 +43,7 @@ const ButtonWrap = styled.div<{colors: Colors, isInfo: boolean, isMoreInfo: bool
     z-index: 7;
     overflow: hidden;
     ${nonSelectable}
-    cursor: pointer;
+    
     
 `
 

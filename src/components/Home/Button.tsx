@@ -16,8 +16,11 @@ const Button = (props: ButtonProps) => {
   const theme = useSelector((state: RootState) => state.theme.theme)
   const iconSrc =  theme == 'dark' ? iconDark : iconLight
 
+  const handleClick = () => {
+    window.open('https://github.com/fROSTY1L', '_blank'); 
+  }
   return (
-    <Container colors={colors}>
+    <Container colors={colors} onClick={handleClick}>
       <Text colors={colors}>{props.text}</Text>
       <Icon src={iconSrc}/>
     </Container>

@@ -27,12 +27,10 @@ const Home = () => {
             <Button text={t('Home.button')} theme="dark"/>
             <LetsWorkButton text={t('AboutMe.mainButton')}/>
           </ButtonsContainer>
-          
         </TitleWrap>
         <MoreInfoWrap>
           <MoreInfo/>
         </MoreInfoWrap>
-        
       </ContentWrap>
     </Wrap>
   )
